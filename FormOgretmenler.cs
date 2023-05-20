@@ -73,5 +73,20 @@ namespace DershaneOtomasyonu
                 cmbBrans.Text = dr["brans"].ToString();
             }
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            //openi mysqlbaglantisi sinifi icerisinde actigimiz icin burada open yapmadan direkt baglantiya basliyoruz
+            MySqlCommand komut = new MySqlCommand("Update TBL_OGRETMENLER set ad=@p1, soyad=@p2, dogum_tarihi=@p3, brans=@p4 where ogr_id=@p5", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", txtAd.Text);
+            komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
+            komut.Parameters.AddWithValue("@p3", maskedDogTar.Text);
+            komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
+            komut.Parameters.AddWithValue("@p5", txtID.Text);
+            komut.ExecuteNonQuery(); //tablo ile ilgili degisiklik yaptigimiz icin bunu dememiz gerekiyor.
+            bgl.baglanti().Close();
+            MessageBox.Show("Personel Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listele();
+        }
     }
 }

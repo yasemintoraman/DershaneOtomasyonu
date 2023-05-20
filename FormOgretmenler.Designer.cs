@@ -150,6 +150,7 @@ namespace DershaneOtomasyonu
             this.btnGuncelle.Size = new System.Drawing.Size(88, 32);
             this.btnGuncelle.TabIndex = 12;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
