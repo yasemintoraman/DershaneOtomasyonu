@@ -44,7 +44,7 @@ namespace DershaneOtomasyonu
             txtID.Text = "";
             txtAd.Text = "";
             txtSoyad.Text = "";
-            maskedDogTar.Text = "";
+            dateEdit1.Text = "";
             cmbBrans.Text = "";
 
         }
@@ -63,7 +63,7 @@ namespace DershaneOtomasyonu
             //komut.Parameters.AddWithValue("@p1", txtID.Text);
             komut.Parameters.AddWithValue("@p1", txtAd.Text);
             komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
-            komut.Parameters.AddWithValue("@p3", maskedDogTar.Text);
+            komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
             komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close(); //baglantiyi kapattik
@@ -80,7 +80,7 @@ namespace DershaneOtomasyonu
                 txtID.Text = dr["ogr_id"].ToString();
                 txtAd.Text = dr["ad"].ToString();
                 txtSoyad.Text = dr["soyad"].ToString();
-                maskedDogTar.Text = dr["dogum_tarihi"].ToString();
+                dateEdit1.Text = dr["dogum_tarihi"].ToString();
                 cmbBrans.Text = dr["brans"].ToString();
             }
         }
@@ -91,7 +91,7 @@ namespace DershaneOtomasyonu
             MySqlCommand komut = new MySqlCommand("Update TBL_OGRETMENLER set ad=@p1, soyad=@p2, dogum_tarihi=@p3, brans=@p4 where ogr_id=@p5", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", txtAd.Text);
             komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
-            komut.Parameters.AddWithValue("@p3", maskedDogTar.Text);
+            komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
             komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
             komut.Parameters.AddWithValue("@p5", txtID.Text);
             komut.ExecuteNonQuery(); //tablo ile ilgili degisiklik yaptigimiz icin bunu dememiz gerekiyor.
@@ -115,9 +115,5 @@ namespace DershaneOtomasyonu
             temizle();
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

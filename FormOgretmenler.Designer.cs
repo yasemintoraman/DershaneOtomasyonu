@@ -41,7 +41,6 @@ namespace DershaneOtomasyonu
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.cmbBrans = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.maskedDogTar = new System.Windows.Forms.MaskedTextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@ namespace DershaneOtomasyonu
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -60,6 +60,8 @@ namespace DershaneOtomasyonu
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBrans.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -81,6 +83,7 @@ namespace DershaneOtomasyonu
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView1_FocusedRowObjectChanged);
             // 
             // xtraTabControl1
@@ -104,13 +107,13 @@ namespace DershaneOtomasyonu
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.dateEdit1);
             this.groupControl1.Controls.Add(this.pictureBox1);
             this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.btnGuncelle);
             this.groupControl1.Controls.Add(this.btnSil);
             this.groupControl1.Controls.Add(this.btnKaydet);
             this.groupControl1.Controls.Add(this.cmbBrans);
-            this.groupControl1.Controls.Add(this.maskedDogTar);
             this.groupControl1.Controls.Add(this.txtSoyad);
             this.groupControl1.Controls.Add(this.txtAd);
             this.groupControl1.Controls.Add(this.txtID);
@@ -184,15 +187,6 @@ namespace DershaneOtomasyonu
             this.cmbBrans.Size = new System.Drawing.Size(187, 24);
             this.cmbBrans.TabIndex = 9;
             // 
-            // maskedDogTar
-            // 
-            this.maskedDogTar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maskedDogTar.Location = new System.Drawing.Point(182, 341);
-            this.maskedDogTar.Mask = "0000-00-00";
-            this.maskedDogTar.Name = "maskedDogTar";
-            this.maskedDogTar.Size = new System.Drawing.Size(187, 26);
-            this.maskedDogTar.TabIndex = 8;
-            // 
             // txtSoyad
             // 
             this.txtSoyad.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -217,7 +211,7 @@ namespace DershaneOtomasyonu
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(187, 26);
             this.txtID.TabIndex = 5;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+           // this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // labelControl5
             // 
@@ -275,6 +269,23 @@ namespace DershaneOtomasyonu
             this.xtraTabPage2.Size = new System.Drawing.Size(533, 743);
             this.xtraTabPage2.Text = "xtraTabPage2";
             // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(182, 346);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.MaskSettings.Set("mask", "yyyy-MM-dd");
+            this.dateEdit1.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit1.Size = new System.Drawing.Size(187, 24);
+            this.dateEdit1.TabIndex = 22;
+      //      this.dateEdit1.EditValueChanged += new System.EventHandler(this.dateEdit1_EditValueChanged);
+            // 
             // FormOgretmenler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +306,8 @@ namespace DershaneOtomasyonu
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBrans.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +326,6 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraEditors.SimpleButton btnSil;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.ComboBoxEdit cmbBrans;
-        private System.Windows.Forms.MaskedTextBox maskedDogTar;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtID;
@@ -322,5 +334,6 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
     }
 }

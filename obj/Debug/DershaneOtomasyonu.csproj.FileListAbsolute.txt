@@ -360,3 +360,4 @@ C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyon
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.csproj.CopyComplete
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.exe
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.pdb
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormOgrenciler.resources

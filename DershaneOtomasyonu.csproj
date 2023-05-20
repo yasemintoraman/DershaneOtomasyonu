@@ -134,6 +134,12 @@
     <Compile Include="FormAnaModul.Designer.cs">
       <DependentUpon>FormAnaModul.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOgrenciler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciler.Designer.cs">
+      <DependentUpon>FormOgrenciler.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOgretmenler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAnaModul.resx">
       <DependentUpon>FormAnaModul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciler.resx">
+      <DependentUpon>FormOgrenciler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOgretmenler.resx">
       <DependentUpon>FormOgretmenler.cs</DependentUpon>
