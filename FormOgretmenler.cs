@@ -39,6 +39,16 @@ namespace DershaneOtomasyonu
 
         }
 
+        void temizle()
+        {
+            txtID.Text = "";
+            txtAd.Text = "";
+            txtSoyad.Text = "";
+            maskedDogTar.Text = "";
+            cmbBrans.Text = "";
+
+        }
+
 
         private void FormOgretmenler_Load(object sender, EventArgs e)
         {
@@ -97,6 +107,11 @@ namespace DershaneOtomasyonu
             bgl.baglanti().Close();
             MessageBox.Show("Personel Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             listele();
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }

@@ -141,6 +141,7 @@ namespace DershaneOtomasyonu
             this.btnTemizle.Size = new System.Drawing.Size(88, 32);
             this.btnTemizle.TabIndex = 13;
             this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnGuncelle
             // 
