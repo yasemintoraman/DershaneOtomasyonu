@@ -211,11 +211,13 @@ namespace DershaneOtomasyonu
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtID.Location = new System.Drawing.Point(182, 217);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(187, 26);
             this.txtID.TabIndex = 5;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // labelControl5
             // 

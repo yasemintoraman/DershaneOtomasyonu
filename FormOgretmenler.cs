@@ -58,12 +58,13 @@ namespace DershaneOtomasyonu
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ogr_id, ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", txtID.Text);
-            komut.Parameters.AddWithValue("@p2", txtAd.Text);
-            komut.Parameters.AddWithValue("@p3", txtSoyad.Text);
-            komut.Parameters.AddWithValue("@p4", maskedDogTar.Text);
-            komut.Parameters.AddWithValue("@p5", cmbBrans.Text);
+            //MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ogr_id,ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
+            MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4)", bgl.baglanti());
+            //komut.Parameters.AddWithValue("@p1", txtID.Text);
+            komut.Parameters.AddWithValue("@p1", txtAd.Text);
+            komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
+            komut.Parameters.AddWithValue("@p3", maskedDogTar.Text);
+            komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close(); //baglantiyi kapattik
             MessageBox.Show("Personel Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -112,6 +113,11 @@ namespace DershaneOtomasyonu
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             temizle();
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
