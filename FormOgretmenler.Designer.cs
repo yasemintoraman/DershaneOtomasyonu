@@ -160,6 +160,7 @@ namespace DershaneOtomasyonu
             this.btnSil.Size = new System.Drawing.Size(88, 32);
             this.btnSil.TabIndex = 11;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 

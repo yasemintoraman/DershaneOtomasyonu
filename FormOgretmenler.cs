@@ -88,5 +88,15 @@ namespace DershaneOtomasyonu
             MessageBox.Show("Personel Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             listele();
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut = new MySqlCommand("Delete from TBL_OGRETMENLER where ogr_id=@p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", txtID.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Personel Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            listele();
+        }
     }
 }
