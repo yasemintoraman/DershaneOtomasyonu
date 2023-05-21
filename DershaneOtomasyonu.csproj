@@ -147,6 +147,12 @@
     <Compile Include="FormAyarlar.Designer.cs">
       <DependentUpon>FormAyarlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiris.Designer.cs">
+      <DependentUpon>FormGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOgrenciler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAyarlar.resx">
       <DependentUpon>FormAyarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiris.resx">
+      <DependentUpon>FormGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOgrenciler.resx">
       <DependentUpon>FormOgrenciler.cs</DependentUpon>

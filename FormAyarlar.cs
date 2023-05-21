@@ -46,6 +46,12 @@ namespace DershaneOtomasyonu
             mskOgrtDogTar.Text = "";
             lookUpEdit1.Text = "";
             lookUpEdit1.Properties.NullText = "Öğretmen Seçiniz";
+            txtOgrID.Text = "";
+            txtOgrSinif.Text = "";
+            txtOgrSifre.Text = "";
+            mskOgrTC.Text = "";
+            lookUpEdit2.Text = "";
+            lookUpEdit2.Properties.NullText = "Öğrenci Seçiniz";
         }
 
 
@@ -101,7 +107,7 @@ namespace DershaneOtomasyonu
             }
         }
 
-        //ADO.NET ile LookUpEdit secimi sonrasi verilerin düzeltilmesi
+        //ADO.NET ile LookUpEdit secimi sonrasi verilerin getirilmesi
         private void lookUpEdit1_Properties_EditValueChanged(object sender, EventArgs e)
         {
             txtOgrtSifre.Text = "";
@@ -113,6 +119,22 @@ namespace DershaneOtomasyonu
                 txtOgrtID.Text = dr3["ogr_id"].ToString();      
                 txtBrans.Text = dr3["brans"].ToString();
                 mskOgrtDogTar.Text = dr3["dogum_tarihi"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+        private void lookUpEdit2_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            txtOgrSifre.Text = "";
+
+            MySqlCommand komut2 = new MySqlCommand("Select * from öğrenci where id=@p1", bgl.baglanti());
+            komut2.Parameters.AddWithValue("@p1", lookUpEdit2.ItemIndex + 1);
+            MySqlDataReader dr4 = komut2.ExecuteReader();
+            while (dr4.Read())
+            {
+                txtOgrID.Text = dr4["id"].ToString();
+                txtOgrSinif.Text = dr4["ogr_sinif"].ToString();
+                mskOgrTC.Text = dr4["tc"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -144,6 +166,44 @@ namespace DershaneOtomasyonu
         }
 
         private void BtnOgrtTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
+        }
+
+        private void gridView2_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            txtOgrID.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "ayarlar_ogrnid").ToString();
+            lookUpEdit2.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "adsoyad").ToString();
+            txtOgrSinif.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "ogr_sinif").ToString();
+            mskOgrTC.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "tc").ToString();
+            txtOgrSifre.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "ogrn_sifre").ToString();
+        }
+
+        private void btnOgrKaydet_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut4 = new MySqlCommand("insert into tbl_ogrnayarlar (ayarlar_ogrnid,ogrn_sifre) values(@p1,@p2)", bgl.baglanti());
+            komut4.Parameters.AddWithValue("@p1", txtOgrID.Text);
+            komut4.Parameters.AddWithValue("@p2", txtOgrSifre.Text);
+            komut4.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Şifre oluşturuldu", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ogrencilistele();
+            temizle();
+        }
+
+        private void btnOgrGuncelle_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut5 = new MySqlCommand("Update tbl_ogrnayarlar set ogrn_sifre=@p1 where ayarlar_ogrnid=@p2", bgl.baglanti());
+            komut5.Parameters.AddWithValue("@p1", txtOgrSifre.Text);
+            komut5.Parameters.AddWithValue("@p2", txtOgrID.Text);
+            komut5.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Şifre Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ogrencilistele();
+            temizle();
+        }
+
+        private void btnOgrTemizle_Click(object sender, EventArgs e)
         {
             temizle();
         }

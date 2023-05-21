@@ -194,6 +194,7 @@ namespace DershaneOtomasyonu
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView2_FocusedRowObjectChanged);
             // 
             // xtraTabControl2
             // 
@@ -484,6 +485,7 @@ namespace DershaneOtomasyonu
             this.btnOgrTemizle.StyleController = this.layoutControl2;
             this.btnOgrTemizle.TabIndex = 16;
             this.btnOgrTemizle.Text = "Temizle";
+            this.btnOgrTemizle.Click += new System.EventHandler(this.btnOgrTemizle_Click);
             // 
             // btnOgrGuncelle
             // 
@@ -493,6 +495,7 @@ namespace DershaneOtomasyonu
             this.btnOgrGuncelle.StyleController = this.layoutControl2;
             this.btnOgrGuncelle.TabIndex = 15;
             this.btnOgrGuncelle.Text = "Güncelle";
+            this.btnOgrGuncelle.Click += new System.EventHandler(this.btnOgrGuncelle_Click);
             // 
             // btnOgrKaydet
             // 
@@ -502,6 +505,7 @@ namespace DershaneOtomasyonu
             this.btnOgrKaydet.StyleController = this.layoutControl2;
             this.btnOgrKaydet.TabIndex = 14;
             this.btnOgrKaydet.Text = "Kaydet";
+            this.btnOgrKaydet.Click += new System.EventHandler(this.btnOgrKaydet_Click);
             // 
             // txtOgrSifre
             // 
@@ -535,6 +539,7 @@ namespace DershaneOtomasyonu
             this.lookUpEdit2.Name = "lookUpEdit2";
             this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit2.Properties.EditValueChanged += new System.EventHandler(this.lookUpEdit2_Properties_EditValueChanged);
             this.lookUpEdit2.Size = new System.Drawing.Size(140, 20);
             this.lookUpEdit2.StyleController = this.layoutControl2;
             this.lookUpEdit2.TabIndex = 5;

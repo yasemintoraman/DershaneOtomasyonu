@@ -368,3 +368,4 @@ C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\EntityFramework.S
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormAyarlar.resources
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormGiris.resources
