@@ -168,6 +168,7 @@ namespace DershaneOtomasyonu
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView1_FocusedRowObjectChanged);
             // 
             // xtraTabPage2
             // 
@@ -243,30 +244,34 @@ namespace DershaneOtomasyonu
             // 
             // BtnOgrtTemizle
             // 
-            this.BtnOgrtTemizle.Location = new System.Drawing.Point(109, 184);
+            this.BtnOgrtTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnOgrtTemizle.ImageOptions.Image")));
+            this.BtnOgrtTemizle.Location = new System.Drawing.Point(109, 212);
             this.BtnOgrtTemizle.Name = "BtnOgrtTemizle";
-            this.BtnOgrtTemizle.Size = new System.Drawing.Size(190, 22);
+            this.BtnOgrtTemizle.Size = new System.Drawing.Size(190, 36);
             this.BtnOgrtTemizle.StyleController = this.layoutControl1;
             this.BtnOgrtTemizle.TabIndex = 16;
             this.BtnOgrtTemizle.Text = "Temizle";
             // 
             // BtnOgrtGuncelle
             // 
-            this.BtnOgrtGuncelle.Location = new System.Drawing.Point(109, 158);
+            this.BtnOgrtGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnOgrtGuncelle.ImageOptions.Image")));
+            this.BtnOgrtGuncelle.Location = new System.Drawing.Point(109, 172);
             this.BtnOgrtGuncelle.Name = "BtnOgrtGuncelle";
-            this.BtnOgrtGuncelle.Size = new System.Drawing.Size(190, 22);
+            this.BtnOgrtGuncelle.Size = new System.Drawing.Size(190, 36);
             this.BtnOgrtGuncelle.StyleController = this.layoutControl1;
             this.BtnOgrtGuncelle.TabIndex = 15;
             this.BtnOgrtGuncelle.Text = "Güncelle";
             // 
             // BtnOgrtKaydet
             // 
+            this.BtnOgrtKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnOgrtKaydet.ImageOptions.Image")));
             this.BtnOgrtKaydet.Location = new System.Drawing.Point(109, 132);
             this.BtnOgrtKaydet.Name = "BtnOgrtKaydet";
-            this.BtnOgrtKaydet.Size = new System.Drawing.Size(190, 22);
+            this.BtnOgrtKaydet.Size = new System.Drawing.Size(190, 36);
             this.BtnOgrtKaydet.StyleController = this.layoutControl1;
             this.BtnOgrtKaydet.TabIndex = 14;
             this.BtnOgrtKaydet.Text = "Kaydet";
+            this.BtnOgrtKaydet.Click += new System.EventHandler(this.BtnOgrtKaydet_Click);
             // 
             // txtOgrtSifre
             // 
@@ -287,14 +292,18 @@ namespace DershaneOtomasyonu
             // 
             // mskOgrtDogTar
             // 
+            this.mskOgrtDogTar.Enabled = false;
             this.mskOgrtDogTar.Location = new System.Drawing.Point(166, 84);
             this.mskOgrtDogTar.Name = "mskOgrtDogTar";
+            this.mskOgrtDogTar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.mskOgrtDogTar.Properties.MaskSettings.Set("mask", "yyyy-MM-dd");
             this.mskOgrtDogTar.Size = new System.Drawing.Size(133, 20);
             this.mskOgrtDogTar.StyleController = this.layoutControl1;
             this.mskOgrtDogTar.TabIndex = 8;
             // 
             // txtBrans
             // 
+            this.txtBrans.Enabled = false;
             this.txtBrans.Location = new System.Drawing.Point(166, 60);
             this.txtBrans.Name = "txtBrans";
             this.txtBrans.Size = new System.Drawing.Size(133, 20);
@@ -307,12 +316,14 @@ namespace DershaneOtomasyonu
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.EditValueChanged += new System.EventHandler(this.lookUpEdit1_Properties_EditValueChanged);
             this.lookUpEdit1.Size = new System.Drawing.Size(133, 20);
             this.lookUpEdit1.StyleController = this.layoutControl1;
             this.lookUpEdit1.TabIndex = 5;
             // 
             // txtOgrtID
             // 
+            this.txtOgrtID.Enabled = false;
             this.txtOgrtID.Location = new System.Drawing.Point(166, 12);
             this.txtOgrtID.Name = "txtOgrtID";
             this.txtOgrtID.Size = new System.Drawing.Size(133, 20);
@@ -396,25 +407,25 @@ namespace DershaneOtomasyonu
             this.layoutControlItem7.Control = this.BtnOgrtKaydet;
             this.layoutControlItem7.Location = new System.Drawing.Point(97, 120);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(194, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(194, 40);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnOgrtGuncelle;
-            this.layoutControlItem8.Location = new System.Drawing.Point(97, 146);
+            this.layoutControlItem8.Location = new System.Drawing.Point(97, 160);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(194, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(194, 40);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.BtnOgrtTemizle;
-            this.layoutControlItem9.Location = new System.Drawing.Point(97, 172);
+            this.layoutControlItem9.Location = new System.Drawing.Point(97, 200);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(194, 71);
+            this.layoutControlItem9.Size = new System.Drawing.Size(194, 43);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -456,6 +467,7 @@ namespace DershaneOtomasyonu
             // 
             // mskOgrTC
             // 
+            this.mskOgrTC.Enabled = false;
             this.mskOgrTC.Location = new System.Drawing.Point(159, 84);
             this.mskOgrTC.Mask = "00000000000";
             this.mskOgrTC.Name = "mskOgrTC";
@@ -508,6 +520,7 @@ namespace DershaneOtomasyonu
             // 
             // txtOgrSinif
             // 
+            this.txtOgrSinif.Enabled = false;
             this.txtOgrSinif.Location = new System.Drawing.Point(159, 60);
             this.txtOgrSinif.Name = "txtOgrSinif";
             this.txtOgrSinif.Size = new System.Drawing.Size(140, 20);
@@ -526,6 +539,7 @@ namespace DershaneOtomasyonu
             // 
             // txtOgrID
             // 
+            this.txtOgrID.Enabled = false;
             this.txtOgrID.Location = new System.Drawing.Point(159, 12);
             this.txtOgrID.Name = "txtOgrID";
             this.txtOgrID.Size = new System.Drawing.Size(140, 20);

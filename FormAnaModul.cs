@@ -41,5 +41,16 @@ namespace DershaneOtomasyonu
                 frm2.Show(); 
             }
         }
+
+        private void btnAyarlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm3 == null || frm3.IsDisposed)
+            {
+                frm3 = new FormAyarlar();
+                frm3.MdiParent = this;
+                frm3.Show();
+            }
+        }
+
     }
 }
