@@ -251,6 +251,7 @@ namespace DershaneOtomasyonu
             this.BtnOgrtTemizle.StyleController = this.layoutControl1;
             this.BtnOgrtTemizle.TabIndex = 16;
             this.BtnOgrtTemizle.Text = "Temizle";
+            this.BtnOgrtTemizle.Click += new System.EventHandler(this.BtnOgrtTemizle_Click);
             // 
             // BtnOgrtGuncelle
             // 
@@ -261,6 +262,7 @@ namespace DershaneOtomasyonu
             this.BtnOgrtGuncelle.StyleController = this.layoutControl1;
             this.BtnOgrtGuncelle.TabIndex = 15;
             this.BtnOgrtGuncelle.Text = "Güncelle";
+            this.BtnOgrtGuncelle.Click += new System.EventHandler(this.BtnOgrtGuncelle_Click);
             // 
             // BtnOgrtKaydet
             // 

@@ -29,6 +29,26 @@ namespace DershaneOtomasyonu
             gridControl1.DataSource = dt1;
         }
 
+        void ogrencilistele()
+        {
+            DataTable dt2 = new DataTable();
+            MySqlDataAdapter da2 = new MySqlDataAdapter("CALL AyarlarOgrenciler", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl2.DataSource = dt2;
+
+        }
+
+        void temizle()
+        {
+            txtOgrtID.Text = "";
+            txtBrans.Text = "";
+            txtOgrtSifre.Text = "";
+            mskOgrtDogTar.Text = "";
+            lookUpEdit1.Text = "";
+            lookUpEdit1.Properties.NullText = "Öğretmen Seçiniz";
+        }
+
+
         //ADO.NET ile LookUpEdit Araci Veri Getirme
 
         void ogretmenlistesi()
@@ -39,13 +59,30 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Properties.ValueMember = "ogr_id";
             lookUpEdit1.Properties.DisplayMember = "adsoyad";
             lookUpEdit1.Properties.NullText = "Öğretmen Seçiniz:";
+           
             lookUpEdit1.Properties.DataSource = dt2;
+        }
+
+        void ogrencilistesi()
+        {
+            DataTable dt3 = new DataTable();
+            MySqlDataAdapter da3 = new MySqlDataAdapter("Select id,CONCAT(öğrenci.ad, ' ', öğrenci.soyad) AS adsoyad, ogr_sinif from öğrenci", bgl.baglanti());
+            da3.Fill(dt3);
+            lookUpEdit2.Properties.ValueMember = "id";
+            lookUpEdit2.Properties.DisplayMember = "adsoyad";
+            lookUpEdit2.Properties.NullText = "Öğrenci Seçiniz:";
+            lookUpEdit2.Properties.DataSource = dt3;
+
         }
 
         private void FormAyarlar_Load(object sender, EventArgs e)
         {
             listele();
             ogretmenlistesi();
+            ogrencilistele();
+            ogrencilistesi();
+            temizle();
+            
         }
 
         //ADO.NET ile GridControl verilerini araclara tasima
@@ -90,6 +127,25 @@ namespace DershaneOtomasyonu
             bgl.baglanti().Close();
             MessageBox.Show("Şifre oluşturuldu", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             listele();
+            temizle();
+        }
+
+        //ADO.NET ögretmen sifre guncelle
+        private void BtnOgrtGuncelle_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut3 = new MySqlCommand("Update tbl_ayarlar set OGRT_SIFRE=@p1 where AYARLAROGRID=@p2", bgl.baglanti());
+            komut3.Parameters.AddWithValue("@p1", txtOgrtSifre.Text);
+            komut3.Parameters.AddWithValue("@p2", txtOgrtID.Text); 
+            komut3.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Şifre Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listele();
+            temizle();
+        }
+
+        private void BtnOgrtTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }
