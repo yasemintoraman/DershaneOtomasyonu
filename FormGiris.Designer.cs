@@ -120,6 +120,7 @@ namespace DershaneOtomasyonu
             this.btnOgretmen.Size = new System.Drawing.Size(155, 93);
             this.btnOgretmen.TabIndex = 7;
             this.btnOgretmen.UseVisualStyleBackColor = true;
+            this.btnOgretmen.Click += new System.EventHandler(this.btnOgretmen_Click);
             // 
             // btnOgrenci
             // 
@@ -130,6 +131,7 @@ namespace DershaneOtomasyonu
             this.btnOgrenci.Size = new System.Drawing.Size(155, 93);
             this.btnOgrenci.TabIndex = 8;
             this.btnOgrenci.UseVisualStyleBackColor = true;
+            this.btnOgrenci.Click += new System.EventHandler(this.btnOgrenci_Click);
             // 
             // FormGiris
             // 

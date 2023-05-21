@@ -153,11 +153,23 @@
     <Compile Include="FormGiris.Designer.cs">
       <DependentUpon>FormGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOgrenciAnaModul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciAnaModul.Designer.cs">
+      <DependentUpon>FormOgrenciAnaModul.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOgrenciler.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOgrenciler.Designer.cs">
       <DependentUpon>FormOgrenciler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgretmenAnaModul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgretmenAnaModul.Designer.cs">
+      <DependentUpon>FormOgretmenAnaModul.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOgretmenler.cs">
       <SubType>Form</SubType>
@@ -177,8 +189,14 @@
     <EmbeddedResource Include="FormGiris.resx">
       <DependentUpon>FormGiris.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciAnaModul.resx">
+      <DependentUpon>FormOgrenciAnaModul.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOgrenciler.resx">
       <DependentUpon>FormOgrenciler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgretmenAnaModul.resx">
+      <DependentUpon>FormOgretmenAnaModul.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOgretmenler.resx">
       <DependentUpon>FormOgretmenler.cs</DependentUpon>

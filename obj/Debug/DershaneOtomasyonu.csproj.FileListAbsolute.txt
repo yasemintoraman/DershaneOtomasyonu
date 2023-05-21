@@ -369,3 +369,5 @@ C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramewor
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormAyarlar.resources
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormGiris.resources
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormOgrenciAnaModul.resources
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormOgretmenAnaModul.resources

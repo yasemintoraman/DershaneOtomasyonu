@@ -40,6 +40,48 @@ namespace DershaneOtomasyonu
             }
             bgl.baglanti().Close();
         }
+
+        private void btnOgretmen_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut = new MySqlCommand("Select ogrt_tc,OGRT_SIFRE from TBL_AYARLAR inner join tbl_ogretmenler on tbl_ayarlar.ayarlarogrid= tbl_ogretmenler.ogr_id where ogrt_tc=@p1 and OGRT_SIFRE=@p2", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", mskTC.Text);
+            komut.Parameters.AddWithValue("@p2", txtSifre.Text);
+            MySqlDataReader dr = komut.ExecuteReader();
+            if (dr.Read())
+            {
+                FormOgretmenAnaModul frm2 = new FormOgretmenAnaModul();
+                frm2.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Hatalı Kullanıcı veya Şifre");
+                mskTC.Text = "";
+                txtSifre.Text = "";
+            }
+            bgl.baglanti().Close();
+        }
+
+        private void btnOgrenci_Click(object sender, EventArgs e)
+        {
+            MySqlCommand komut = new MySqlCommand("Select tc,ogrn_sifre from tbl_ogrnayarlar inner join öğrenci on tbl_ogrnayarlar.ayarlar_ogrnid= öğrenci.id where tc=@p1 and ogrn_sifre=@p2", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", mskTC.Text);
+            komut.Parameters.AddWithValue("@p2", txtSifre.Text);
+            MySqlDataReader dr = komut.ExecuteReader();
+            if (dr.Read())
+            {
+                FormOgrenciAnaModul frm3 = new FormOgrenciAnaModul();
+                frm3.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Hatalı Kullanıcı veya Şifre");
+                mskTC.Text = "";
+                txtSifre.Text = "";
+            }
+            bgl.baglanti().Close();
+        }
     }
 
 }
