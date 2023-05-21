@@ -16,7 +16,7 @@ namespace DershaneOtomasyonu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormOgrenciler());//fun anamodulden basladigi icin ilk olarak orası gozukuyor 
+            Application.Run(new FormAyarlar());//fun anamodulden basladigi icin ilk olarak orası gozukuyor 
         }
     }
 }

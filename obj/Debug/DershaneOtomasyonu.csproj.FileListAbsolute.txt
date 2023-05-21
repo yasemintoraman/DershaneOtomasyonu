@@ -361,3 +361,10 @@ C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyon
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.exe
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.pdb
 C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormOgrenciler.resources
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\EntityFramework.dll
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\EntityFramework.xml
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Yasmiin\Documents\GitHub\DershaneOtomasyonu\obj\Debug\DershaneOtomasyonu.FormAyarlar.resources

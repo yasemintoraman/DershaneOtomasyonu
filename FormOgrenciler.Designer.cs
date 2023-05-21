@@ -46,7 +46,6 @@ namespace DershaneOtomasyonu
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.cmbSinif = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.maskedDogTar = new System.Windows.Forms.MaskedTextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -123,7 +122,6 @@ namespace DershaneOtomasyonu
             this.groupControl1.Controls.Add(this.btnSil);
             this.groupControl1.Controls.Add(this.btnKaydet);
             this.groupControl1.Controls.Add(this.cmbSinif);
-            this.groupControl1.Controls.Add(this.maskedDogTar);
             this.groupControl1.Controls.Add(this.txtSoyad);
             this.groupControl1.Controls.Add(this.txtAd);
             this.groupControl1.Controls.Add(this.txtID);
@@ -276,15 +274,6 @@ namespace DershaneOtomasyonu
             "8.SINIF"});
             this.cmbSinif.Size = new System.Drawing.Size(187, 24);
             this.cmbSinif.TabIndex = 9;
-            // 
-            // maskedDogTar
-            // 
-            this.maskedDogTar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maskedDogTar.Location = new System.Drawing.Point(28, 671);
-            this.maskedDogTar.Mask = "0000-00-00";
-            this.maskedDogTar.Name = "maskedDogTar";
-            this.maskedDogTar.Size = new System.Drawing.Size(187, 26);
-            this.maskedDogTar.TabIndex = 8;
             // 
             // txtSoyad
             // 
@@ -540,7 +529,6 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraEditors.SimpleButton btnSil;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.ComboBoxEdit cmbSinif;
-        private System.Windows.Forms.MaskedTextBox maskedDogTar;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtID;
