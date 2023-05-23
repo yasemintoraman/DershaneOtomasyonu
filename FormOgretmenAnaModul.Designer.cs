@@ -34,7 +34,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnOgretmen = new DevExpress.XtraBars.BarButtonItem();
             this.btnOgrenciler = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNotGiris = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAyarlar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -54,7 +54,7 @@
             this.barButtonItem1,
             this.btnOgretmen,
             this.btnOgrenciler,
-            this.barButtonItem4,
+            this.btnNotGiris,
             this.barButtonItem5,
             this.btnAyarlar,
             this.barButtonItem7});
@@ -92,15 +92,16 @@
             this.btnOgrenciler.ItemAppearance.Normal.Options.UseFont = true;
             this.btnOgrenciler.Name = "btnOgrenciler";
             // 
-            // barButtonItem4
+            // btnNotGiris
             // 
-            this.barButtonItem4.Caption = "NOT GİRİŞ";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnNotGiris.Caption = "NOT GİRİŞ";
+            this.btnNotGiris.Id = 4;
+            this.btnNotGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNotGiris.ImageOptions.Image")));
+            this.btnNotGiris.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNotGiris.ImageOptions.LargeImage")));
+            this.btnNotGiris.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNotGiris.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnNotGiris.Name = "btnNotGiris";
+            this.btnNotGiris.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNotGiris_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -145,7 +146,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgretmen);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgrenciler);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnNotGiris);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -175,7 +176,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnOgretmen;
         private DevExpress.XtraBars.BarButtonItem btnOgrenciler;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnNotGiris;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnAyarlar;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;

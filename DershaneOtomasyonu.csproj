@@ -153,6 +153,12 @@
     <Compile Include="FormGiris.Designer.cs">
       <DependentUpon>FormGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNotGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotGiris.Designer.cs">
+      <DependentUpon>FormNotGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOgrenciAnaModul.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiris.resx">
       <DependentUpon>FormGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotGiris.resx">
+      <DependentUpon>FormNotGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOgrenciAnaModul.resx">
       <DependentUpon>FormOgrenciAnaModul.cs</DependentUpon>

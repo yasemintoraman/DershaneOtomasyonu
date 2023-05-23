@@ -35,7 +35,7 @@ namespace DershaneOtomasyonu
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnOgretmen = new DevExpress.XtraBars.BarButtonItem();
             this.btnOgrenciler = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnNotGiris = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAyarlar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -55,7 +55,7 @@ namespace DershaneOtomasyonu
             this.barButtonItem1,
             this.btnOgretmen,
             this.btnOgrenciler,
-            this.barButtonItem4,
+            this.BtnNotGiris,
             this.barButtonItem5,
             this.btnAyarlar,
             this.barButtonItem7});
@@ -95,15 +95,16 @@ namespace DershaneOtomasyonu
             this.btnOgrenciler.Name = "btnOgrenciler";
             this.btnOgrenciler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOgrenciler_ItemClick);
             // 
-            // barButtonItem4
+            // BtnNotGiris
             // 
-            this.barButtonItem4.Caption = "NOT GİRİŞ";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.BtnNotGiris.Caption = "NOT GİRİŞ";
+            this.BtnNotGiris.Id = 4;
+            this.BtnNotGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNotGiris.ImageOptions.Image")));
+            this.BtnNotGiris.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNotGiris.ImageOptions.LargeImage")));
+            this.BtnNotGiris.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnNotGiris.ItemAppearance.Normal.Options.UseFont = true;
+            this.BtnNotGiris.Name = "BtnNotGiris";
+            this.BtnNotGiris.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnNotGiris_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -119,8 +120,8 @@ namespace DershaneOtomasyonu
             // 
             this.btnAyarlar.Caption = "AYARLAR";
             this.btnAyarlar.Id = 6;
-            this.btnAyarlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btnAyarlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btnAyarlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.Image")));
+            this.btnAyarlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.LargeImage")));
             this.btnAyarlar.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAyarlar.ItemAppearance.Normal.Options.UseFont = true;
             this.btnAyarlar.Name = "btnAyarlar";
@@ -149,7 +150,7 @@ namespace DershaneOtomasyonu
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgretmen);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgrenciler);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnNotGiris);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAyarlar);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
@@ -184,7 +185,7 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnOgretmen;
         private DevExpress.XtraBars.BarButtonItem btnOgrenciler;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem BtnNotGiris;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnAyarlar;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;

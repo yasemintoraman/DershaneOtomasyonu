@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DershaneOtomasyonu
 {
@@ -17,7 +18,7 @@ namespace DershaneOtomasyonu
             InitializeComponent();
         }
 
-        DbOkulEntities db = new DbOkulEntities();
+        mysqlbaglantisi bgl = new mysqlbaglantisi();
 
         //ekledik
         public string TC;
@@ -39,13 +40,35 @@ namespace DershaneOtomasyonu
             durum = false;
             chksozlu3.Checked = true;
         }
-        void ogrtgetir()
+        /*void ogrtgetir()
         {
             var sorgu = db.TBL_OGRETMENLER.Where(x => x.OGRTTC == TC).SingleOrDefault();
             LblOgrtAdSoyad.Text = sorgu.OGRTAD + " " + sorgu.OGRTSOYAD;
             LblOgrtBrans.Text = sorgu.OGRTBRANS;
         }
+        */
+        void ogrtgetir()
+        {
+            MySqlCommand komut = new MySqlCommand("SELECT ad, soyad, brans from tbl_ogretmenler where ogrt_tc = @p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", TC);
 
+            MySqlDataReader dr7 = komut.ExecuteReader();
+            if (dr7.Read())
+            {
+                string ad = dr7.GetString(0);
+                string soyad = dr7.GetString(1);
+                string brans = dr7.GetString(2);
+
+                LblOgrtAdSoyad.Text = ad + " " + soyad;
+                LblOgrtBrans.Text = brans;
+            }
+
+            dr7.Close();
+        }
+
+
+
+        /*
         void ogrgetir()
         {
             var sorgu = from item in db.TBL_OGRENCILER
@@ -62,8 +85,27 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Properties.NullText = "Öğrenci Seçiniz";
             lookUpEdit1.Properties.DataSource = sorgu.ToList();
         }
+        */
 
-        void ogrnotlistele()
+        void ogrgetir() {
+            MySqlCommand komut = new MySqlCommand("Select id, CONCAT(öğrenci.ad, ' ', öğrenci.soyad) AS adsoyad,tc from öğrenci where ogr_sinif=@p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", CmbSinif.Text);
+
+            MySqlDataReader dr = komut.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(dr);
+
+            lookUpEdit1.Properties.ValueMember = "id";
+            lookUpEdit1.Properties.DisplayMember = "adsoyad";
+            lookUpEdit1.Properties.NullText = "Öğrenci Seçiniz";
+            lookUpEdit1.Properties.DataSource = dataTable;
+        }
+
+
+
+        /*
+         void ogrnotlistele()
         {
             var liste1 = from item in db.TBL_NOTLAR
                          where item.NOTBRANS == LblOgrtBrans.Text &&
@@ -92,15 +134,86 @@ namespace DershaneOtomasyonu
                          select item;
 
             gridControl4.DataSource = liste4.ToList();
+        }*/
+
+        void ogrnotlistele()
+        {
+            MySqlCommand komut = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTBRANS = @p1 AND NOTSINIF = '5.SINIF'", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", LblOgrtBrans.Text);
+
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(komut);
+            da1.Fill(dt1);
+            gridControl1.DataSource = dt1;
+
+            MySqlCommand komut2 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTBRANS = @p1 AND NOTSINIF = '6.SINIF'", bgl.baglanti());
+            komut2.Parameters.AddWithValue("@p1", LblOgrtBrans.Text);
+
+            DataTable dt2 = new DataTable();
+            MySqlDataAdapter da2 = new MySqlDataAdapter(komut2);
+            da2.Fill(dt2);
+            gridControl1.DataSource = dt2;
+
+
+            MySqlCommand komut3 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTBRANS = @p1 AND NOTSINIF = '7.SINIF'", bgl.baglanti());
+            komut3.Parameters.AddWithValue("@p1", LblOgrtBrans.Text);
+
+            DataTable dt3 = new DataTable();
+            MySqlDataAdapter da3 = new MySqlDataAdapter(komut3);
+            da3.Fill(dt3);
+            gridControl1.DataSource = dt3;
+
+
+            MySqlCommand komut4 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTBRANS = @p1 AND NOTSINIF = '8.SINIF'", bgl.baglanti());
+            komut4.Parameters.AddWithValue("@p1", LblOgrtBrans.Text);
+
+            DataTable dt4 = new DataTable();
+            MySqlDataAdapter da4 = new MySqlDataAdapter(komut4);
+            da4.Fill(dt4);
+            gridControl1.DataSource = dt4;
         }
 
+        /*
         void mudurnotlistele()
         {
-            gridControl1.DataSource = db.NotListele5();
-            gridControl2.DataSource = db.NotListele6();
+            gridControl1.DataSource = NotListele5();
+            gridControl2.DataSource = NotListele6();
             gridControl3.DataSource = db.NotListele7();
             gridControl4.DataSource = db.NotListele8();
         }
+        */
+
+        void mudurnotlistele()
+        {
+            MySqlCommand komut5 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTSINIF = '5.SINIF'", bgl.baglanti());
+            DataTable dt5 = new DataTable();
+            MySqlDataAdapter da5 = new MySqlDataAdapter(komut5);
+            da5.Fill(dt5);
+            gridControl1.DataSource = dt5;
+
+            MySqlCommand komut6 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTSINIF = '6.SINIF'", bgl.baglanti());
+            DataTable dt6 = new DataTable();
+            MySqlDataAdapter da6 = new MySqlDataAdapter(komut6);
+            da5.Fill(dt6);
+            gridControl2.DataSource = dt6;
+
+
+            MySqlCommand komut7 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTSINIF = '7.SINIF'", bgl.baglanti());
+            DataTable dt7 = new DataTable();
+            MySqlDataAdapter da7 = new MySqlDataAdapter(komut7);
+            da7.Fill(dt7);
+            gridControl3.DataSource = dt7;
+
+
+            MySqlCommand komut8 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTSINIF = '8.SINIF'", bgl.baglanti());
+            DataTable dt8 = new DataTable();
+            MySqlDataAdapter da8 = new MySqlDataAdapter(komut8);
+            da8.Fill(dt8);
+            gridControl4.DataSource = dt8;
+        }
+
+
+        /*
         private void FrmNotGiris_Load(object sender, EventArgs e)
         {
 
@@ -134,8 +247,41 @@ namespace DershaneOtomasyonu
             temizle();
 
         }
+        */
 
-        private void CmbSinif_SelectedIndexChanged(object sender, EventArgs e)
+        private void FrmNotGiris_Load(object sender, EventArgs e)
+        { 
+            LblOgrtTC.Text = TC;
+            ogrtgetir();
+
+            if (LblOgrtBrans.Text == "MÜDÜR" || LblOgrtBrans.Text == "MÜDÜR YARDIMCISI")
+            {
+                mudurnotlistele();
+                BtnSil.Visible = true;
+
+                MySqlCommand komut9 = new MySqlCommand("SELECT BRANSID,BRANSAD from TBL_BRANSLAR", bgl.baglanti());
+                MySqlDataAdapter da9 = new MySqlDataAdapter(komut9);
+                DataTable dt9 = new DataTable();
+                da9.Fill(dt9);
+
+                CmbBrans.DataSource = dt9;
+                CmbBrans.DisplayMember = "BRANSAD";
+                CmbBrans.ValueMember = "BRANSID";
+
+            }else
+            {
+                CmbBrans.Text = LblOgrtBrans.Text;
+                CmbBrans.Enabled = false;
+                ogrnotlistele();
+                BtnSil.Visible = false;
+
+            }
+            temizle();
+        
+        } 
+   
+
+            private void CmbSinif_SelectedIndexChanged(object sender, EventArgs e)
         {
             ogrgetir();
         }
@@ -266,6 +412,8 @@ namespace DershaneOtomasyonu
             item.DURUM = durum;
             db.SaveChanges();
         }*/
+
+        /*
         void guncelle()
         {
             int id = Convert.ToInt32(TxtID.Text);
@@ -286,6 +434,38 @@ namespace DershaneOtomasyonu
             item.DURUM = durum;
             db.SaveChanges();
         }
+        */
+
+        void guncelle()
+        {
+            int id = Convert.ToInt32(TxtID.Text);
+            byte sinav1 = Convert.ToByte(TxtSinav1.Text);
+            byte sinav2 = Convert.ToByte(TxtSinav2.Text);
+            byte sozlu1 = Convert.ToByte(TxtSozlu1.Text);
+            byte sozlu2 = Convert.ToByte(TxtSozlu2.Text);
+            byte? sozlu3 = null;
+            if (!string.IsNullOrEmpty(TxtSozlu3.Text) && TxtSozlu3.Text != "Girilmedi")
+            {
+                sozlu3 = Convert.ToByte(TxtSozlu3.Text);
+            }
+            decimal ortalama = Convert.ToDecimal(TxtOrtalama.Text);
+
+
+            MySqlCommand command = new MySqlCommand("UPDATE TBL_NOTLAR SET SINAV1 = @sinav1, SINAV2 = @sinav2, SOZLU1 = @sozlu1, SOZLU2 = @sozlu2, SOZLU3 = @sozlu3, ORTALAMA = @ortalama, DURUM = @durum WHERE NOTID = @id", bgl.baglanti());
+
+            command.Parameters.AddWithValue("@sinav1", sinav1);
+            command.Parameters.AddWithValue("@sinav2", sinav2);
+            command.Parameters.AddWithValue("@sozlu1", sozlu1);
+            command.Parameters.AddWithValue("@sozlu2", sozlu2);
+            command.Parameters.AddWithValue("@sozlu3", (object)sozlu3 ?? DBNull.Value);
+            command.Parameters.AddWithValue("@ortalama", ortalama);
+            command.Parameters.AddWithValue("@durum", durum);
+            command.Parameters.AddWithValue("@id", id);
+
+            command.ExecuteNonQuery();
+        }
+
+
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
             if (LblOgrtBrans.Text == "MÜDÜR" || LblOgrtBrans.Text == "MÜDÜR YARDIMCISI")
@@ -306,18 +486,13 @@ namespace DershaneOtomasyonu
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            /*var liste = from item in db.TBL_OGRENCILER
-                        where lookUpEdit1.Text == (item.OGRAD + " " + item.OGRSOYAD)
-                        select new
-                        {
-                            TCKimlik = item.OGRTC
-                        };
-            LblTC.Text = liste.FirstOrDefault().TCKimlik;*/
+            string selectedAdSoyad = lookUpEdit1.Text;
+            MySqlCommand command = new MySqlCommand("SELECT tc FROM öğrenci WHERE CONCAT(öğrenci.ad, ' ', öğrenci.soyad) = @adSoyad", bgl.baglanti());
+            command.Parameters.AddWithValue("@adSoyad", selectedAdSoyad);
 
-            var liste = from item in db.TBL_OGRENCILER
-                        select item;
+            string ogrenciTC = command.ExecuteScalar()?.ToString();
 
-            LblTC.Text = liste.FirstOrDefault(x => (x.OGRAD + " " + x.OGRSOYAD) == lookUpEdit1.Text).OGRTC;
+            LblTC.Text = ogrenciTC;
         }
 
         private void chksozlu3_CheckedChanged(object sender, EventArgs e)
@@ -334,13 +509,20 @@ namespace DershaneOtomasyonu
             }
         }
 
+        private void FormNotGiris_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnSil_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(TxtID.Text);
-            var item = db.TBL_NOTLAR.FirstOrDefault(x => x.NOTID == id);
-            db.TBL_NOTLAR.Remove(item);
-            db.SaveChanges();
+            MySqlCommand command2 = new MySqlCommand("DELETE FROM TBL_NOTLAR WHERE NOTID = @id", bgl.baglanti());
+            command2.Parameters.AddWithValue("@id", id);
+
+            command2.ExecuteNonQuery();
             mudurnotlistele();
+
         }
 
         /*void kaydetsozlu3var()
@@ -360,7 +542,7 @@ namespace DershaneOtomasyonu
             db.TBL_NOTLAR.Add(komut);
             db.SaveChanges();
         }*/
-        void kaydet()
+       /* void kaydet()
         {
             var sorgu = from item in db.TBL_NOTLAR
                         where item.NOTTC == LblTC.Text &&
@@ -394,6 +576,53 @@ namespace DershaneOtomasyonu
                 db.TBL_NOTLAR.Add(komut);
                 db.SaveChanges();
             }
+        }
+
+        */
+
+        void kaydet()
+        {
+            string tc = LblTC.Text;
+            string brans = CmbBrans.Text;
+
+            MySqlCommand kmt = new MySqlCommand("SELECT COUNT(*) FROM TBL_NOTLAR WHERE NOTTC = @tc AND NOTBRANS = @brans", bgl.baglanti());
+
+            kmt.Parameters.AddWithValue("@tc", tc);
+            kmt.Parameters.AddWithValue("@brans", brans);
+
+            int count = Convert.ToInt32(kmt.ExecuteScalar());
+
+            if (count > 0)
+            {
+                MessageBox.Show("Öğrencinin " + brans + " ders notu vardır");
+            }
+            else
+            {
+                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO TBL_NOTLAR (NOTSINIF, NOTADSOYAD, NOTTC, NOTBRANS, SINAV1, SINAV2, SOZLU1, SOZLU2, SOZLU3, DURUM, ORTALAMA) VALUES (@sinif, @adsoyad, @tc, @brans, @sinav1, @sinav2, @sozlu1, @sozlu2, @sozlu3, @durum, @ortalama)", bgl.baglanti());
+                insertCommand.Parameters.AddWithValue("@sinif", CmbSinif.Text);
+                insertCommand.Parameters.AddWithValue("@adsoyad", lookUpEdit1.Text);
+                insertCommand.Parameters.AddWithValue("@tc", tc);
+                insertCommand.Parameters.AddWithValue("@brans", brans);
+                insertCommand.Parameters.AddWithValue("@sinav1", Convert.ToByte(TxtSinav1.Text));
+                insertCommand.Parameters.AddWithValue("@sinav2", Convert.ToByte(TxtSinav2.Text));
+                insertCommand.Parameters.AddWithValue("@sozlu1", Convert.ToByte(TxtSozlu1.Text));
+                insertCommand.Parameters.AddWithValue("@sozlu2", Convert.ToByte(TxtSozlu2.Text));
+
+                if (TxtSozlu3.Text == "Girilmedi" || string.IsNullOrEmpty(TxtSozlu3.Text))
+                {
+                    insertCommand.Parameters.AddWithValue("@sozlu3", DBNull.Value);
+                }
+                else
+                {
+                    insertCommand.Parameters.AddWithValue("@sozlu3", Convert.ToByte(TxtSozlu3.Text));
+                }
+
+                insertCommand.Parameters.AddWithValue("@durum", durum);
+                insertCommand.Parameters.AddWithValue("@ortalama", Convert.ToDecimal(TxtOrtalama.Text));
+
+                insertCommand.ExecuteNonQuery();
+            }
+
         }
         private void BtnKaydet_Click(object sender, EventArgs e)
         {

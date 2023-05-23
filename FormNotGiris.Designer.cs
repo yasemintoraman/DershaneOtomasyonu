@@ -394,7 +394,6 @@ namespace DershaneOtomasyonu
             this.BtnHesapla.Size = new System.Drawing.Size(135, 38);
             this.BtnHesapla.TabIndex = 26;
             this.BtnHesapla.Text = "Hesapla";
-            this.BtnHesapla.Click += new System.EventHandler(this.BtnHesapla_Click_1);
             // 
             // labelControl8
             // 
@@ -594,6 +593,7 @@ namespace DershaneOtomasyonu
             this.Controls.Add(this.groupControl1);
             this.Name = "FormNotGiris";
             this.Text = "FormNotGiris";
+            this.Load += new System.EventHandler(this.FormNotGiris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

@@ -20,6 +20,9 @@ namespace DershaneOtomasyonu
         FormOgretmenler frm1; //formogretmenler bir sinif old. icin erisip cagiracagiz
         FormOgrenciler frm2;
         FormAyarlar frm3;
+        FormNotGiris frm4;
+
+        public string kullaniciTC;
 
         private void btnOgretmen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -51,6 +54,15 @@ namespace DershaneOtomasyonu
                 frm3.Show();
             }
         }
-
+        private void BtnNotGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm4 == null || frm4.IsDisposed)
+            {
+                frm4 = new FormNotGiris();
+                frm4.TC = kullaniciTC; //ekledik
+                frm4.MdiParent = this;
+                frm4.Show();
+            }
+        }
     }
 }
