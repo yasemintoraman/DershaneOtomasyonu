@@ -57,6 +57,7 @@ namespace DershaneOtomasyonu
             txtSoyad.Text = "";
             mskTelefon.Text = "";
             dateEdit1.Text = "";
+            mskYil.Text = "";
         }
 
         private void FormOgrenciler_Load(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace DershaneOtomasyonu
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            MySqlCommand komut = new MySqlCommand("insert into öğrenci (ogr_no, ogr_sinif, tc, ad, soyad, telefon, dogum_tarihi) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7)", bgl.baglanti());
+            MySqlCommand komut = new MySqlCommand("insert into öğrenci (ogr_no, ogr_sinif, tc, ad, soyad, telefon, dogum_tarihi, kayit_yili) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", mskOgrNo.Text);
             komut.Parameters.AddWithValue("@p2", cmbSinif.Text);
             komut.Parameters.AddWithValue("@p3", mskTC.Text);
@@ -75,6 +76,7 @@ namespace DershaneOtomasyonu
             komut.Parameters.AddWithValue("@p5", txtSoyad.Text);
             komut.Parameters.AddWithValue("@p6", mskTelefon.Text);
             komut.Parameters.AddWithValue("@p7", dateEdit1.Text);
+            komut.Parameters.AddWithValue("@p8", mskYil.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Öğrenci Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -94,6 +96,7 @@ namespace DershaneOtomasyonu
                 txtSoyad.Text = dr["soyad"].ToString();
                 mskTelefon.Text = dr["telefon"].ToString();
                 dateEdit1.Text = dr["dogum_tarihi"].ToString();
+                mskYil.Text = dr["kayit_yili"].ToString();
             }
         }
 
@@ -110,6 +113,7 @@ namespace DershaneOtomasyonu
                 txtSoyad.Text = dr["soyad"].ToString();
                 mskTelefon.Text = dr["telefon"].ToString();
                 dateEdit1.Text = dr["dogum_tarihi"].ToString();
+                mskYil.Text = dr["kayit_yili"].ToString();
 
             }
 
@@ -128,6 +132,7 @@ namespace DershaneOtomasyonu
                 txtSoyad.Text = dr["soyad"].ToString();
                 mskTelefon.Text = dr["telefon"].ToString();
                 dateEdit1.Text = dr["dogum_tarihi"].ToString();
+                mskYil.Text = dr["kayit_yili"].ToString();
 
             }
 
@@ -146,6 +151,7 @@ namespace DershaneOtomasyonu
                 txtSoyad.Text = dr["soyad"].ToString();
                 mskTelefon.Text = dr["telefon"].ToString();
                 dateEdit1.Text = dr["dogum_tarihi"].ToString();
+                mskYil.Text = dr["kayit_yili"].ToString();
 
             }
 
@@ -153,7 +159,7 @@ namespace DershaneOtomasyonu
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            MySqlCommand komut = new MySqlCommand("Update öğrenci set ogr_no=@p1, ogr_sinif=@p2,tc=@p3,ad=@p4,soyad=@p5,telefon=@p6,dogum_tarihi=@p7 where id=@p8", bgl.baglanti());
+            MySqlCommand komut = new MySqlCommand("Update öğrenci set ogr_no=@p1, ogr_sinif=@p2,tc=@p3,ad=@p4,soyad=@p5,telefon=@p6,dogum_tarihi=@p7,kayit_yili=@p8 where id=@p9", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", mskOgrNo.Text);
             komut.Parameters.AddWithValue("@p2", cmbSinif.Text);
             komut.Parameters.AddWithValue("@p3", mskTC.Text);
@@ -161,7 +167,8 @@ namespace DershaneOtomasyonu
             komut.Parameters.AddWithValue("@p5", txtSoyad.Text);
             komut.Parameters.AddWithValue("@p6", mskTelefon.Text);
             komut.Parameters.AddWithValue("@p7", dateEdit1.Text);
-            komut.Parameters.AddWithValue("@p8", txtID.Text);
+            komut.Parameters.AddWithValue("@p8", mskYil.Text);
+            komut.Parameters.AddWithValue("@p9", txtID.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Öğrenci Bilgileri Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);

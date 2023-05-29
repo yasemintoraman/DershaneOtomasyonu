@@ -46,6 +46,7 @@ namespace DershaneOtomasyonu
             txtSoyad.Text = "";
             dateEdit1.Text = "";
             cmbBrans.Text = "";
+            mskOgrtTC.Text = "";
 
         }
 
@@ -59,12 +60,14 @@ namespace DershaneOtomasyonu
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             //MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ogr_id,ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
-            MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4)", bgl.baglanti());
+            MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ad, soyad, dogum_tarihi,brans,ogrt_tc) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
             //komut.Parameters.AddWithValue("@p1", txtID.Text);
             komut.Parameters.AddWithValue("@p1", txtAd.Text);
             komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
             komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
             komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
+            komut.Parameters.AddWithValue("@p5", mskOgrtTC.Text);
+
             komut.ExecuteNonQuery();
             bgl.baglanti().Close(); //baglantiyi kapattik
             MessageBox.Show("Personel Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,18 +85,20 @@ namespace DershaneOtomasyonu
                 txtSoyad.Text = dr["soyad"].ToString();
                 dateEdit1.Text = dr["dogum_tarihi"].ToString();
                 cmbBrans.Text = dr["brans"].ToString();
+                mskOgrtTC.Text = dr["ogrt_tc"].ToString();
             }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             //openi mysqlbaglantisi sinifi icerisinde actigimiz icin burada open yapmadan direkt baglantiya basliyoruz
-            MySqlCommand komut = new MySqlCommand("Update TBL_OGRETMENLER set ad=@p1, soyad=@p2, dogum_tarihi=@p3, brans=@p4 where ogr_id=@p5", bgl.baglanti());
+            MySqlCommand komut = new MySqlCommand("Update TBL_OGRETMENLER set ad=@p1, soyad=@p2, dogum_tarihi=@p3, brans=@p4, ogrt_tc=@p5 where ogr_id=@p6", bgl.baglanti());
             komut.Parameters.AddWithValue("@p1", txtAd.Text);
             komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
             komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
             komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
-            komut.Parameters.AddWithValue("@p5", txtID.Text);
+            komut.Parameters.AddWithValue("@p5", mskOgrtTC.Text);
+            komut.Parameters.AddWithValue("@p6", txtID.Text);
             komut.ExecuteNonQuery(); //tablo ile ilgili degisiklik yaptigimiz icin bunu dememiz gerekiyor.
             bgl.baglanti().Close();
             MessageBox.Show("Personel Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);

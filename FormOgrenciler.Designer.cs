@@ -30,7 +30,6 @@ namespace DershaneOtomasyonu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOgrenciler));
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
@@ -40,7 +39,6 @@ namespace DershaneOtomasyonu
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.mskTelefon = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -68,12 +66,13 @@ namespace DershaneOtomasyonu
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.mskYil = new System.Windows.Forms.MaskedTextBox();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSinif.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -93,12 +92,6 @@ namespace DershaneOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(533, 743);
-            this.xtraTabPage2.Text = "xtraTabPage2";
-            // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.groupControl1);
@@ -109,6 +102,8 @@ namespace DershaneOtomasyonu
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.mskYil);
+            this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.dateEdit1);
             this.groupControl1.Controls.Add(this.mskOgrNo);
             this.groupControl1.Controls.Add(this.labelControl8);
@@ -116,7 +111,6 @@ namespace DershaneOtomasyonu
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.mskTelefon);
-            this.groupControl1.Controls.Add(this.pictureBox1);
             this.groupControl1.Controls.Add(this.btnTemizle);
             this.groupControl1.Controls.Add(this.btnGuncelle);
             this.groupControl1.Controls.Add(this.btnSil);
@@ -139,7 +133,7 @@ namespace DershaneOtomasyonu
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(182, 471);
+            this.dateEdit1.Location = new System.Drawing.Point(195, 354);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dateEdit1.Properties.Appearance.Options.UseFont = true;
@@ -155,7 +149,7 @@ namespace DershaneOtomasyonu
             // mskOgrNo
             // 
             this.mskOgrNo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mskOgrNo.Location = new System.Drawing.Point(182, 262);
+            this.mskOgrNo.Location = new System.Drawing.Point(195, 145);
             this.mskOgrNo.Mask = "0000";
             this.mskOgrNo.Name = "mskOgrNo";
             this.mskOgrNo.Size = new System.Drawing.Size(187, 26);
@@ -166,7 +160,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(90, 262);
+            this.labelControl8.Location = new System.Drawing.Point(103, 145);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(82, 18);
             this.labelControl8.TabIndex = 19;
@@ -175,7 +169,7 @@ namespace DershaneOtomasyonu
             // mskTC
             // 
             this.mskTC.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mskTC.Location = new System.Drawing.Point(182, 302);
+            this.mskTC.Location = new System.Drawing.Point(195, 185);
             this.mskTC.Mask = "00000000000";
             this.mskTC.Name = "mskTC";
             this.mskTC.Size = new System.Drawing.Size(187, 26);
@@ -186,7 +180,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(138, 310);
+            this.labelControl7.Location = new System.Drawing.Point(151, 193);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(29, 18);
             this.labelControl7.TabIndex = 17;
@@ -196,7 +190,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(117, 428);
+            this.labelControl6.Location = new System.Drawing.Point(130, 311);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(54, 18);
             this.labelControl6.TabIndex = 16;
@@ -205,24 +199,16 @@ namespace DershaneOtomasyonu
             // mskTelefon
             // 
             this.mskTelefon.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mskTelefon.Location = new System.Drawing.Point(182, 425);
+            this.mskTelefon.Location = new System.Drawing.Point(195, 308);
             this.mskTelefon.Mask = "(999) 000-0000";
             this.mskTelefon.Name = "mskTelefon";
             this.mskTelefon.Size = new System.Drawing.Size(187, 26);
             this.mskTelefon.TabIndex = 15;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(255, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 102);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnTemizle
             // 
             this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
-            this.btnTemizle.Location = new System.Drawing.Point(318, 686);
+            this.btnTemizle.Location = new System.Drawing.Point(294, 628);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(88, 32);
             this.btnTemizle.TabIndex = 13;
@@ -232,7 +218,7 @@ namespace DershaneOtomasyonu
             // btnGuncelle
             // 
             this.btnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuncelle.ImageOptions.Image")));
-            this.btnGuncelle.Location = new System.Drawing.Point(318, 636);
+            this.btnGuncelle.Location = new System.Drawing.Point(294, 578);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(88, 32);
             this.btnGuncelle.TabIndex = 12;
@@ -242,7 +228,7 @@ namespace DershaneOtomasyonu
             // btnSil
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
-            this.btnSil.Location = new System.Drawing.Point(318, 589);
+            this.btnSil.Location = new System.Drawing.Point(294, 531);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(88, 32);
             this.btnSil.TabIndex = 11;
@@ -252,7 +238,7 @@ namespace DershaneOtomasyonu
             // btnKaydet
             // 
             this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
-            this.btnKaydet.Location = new System.Drawing.Point(318, 551);
+            this.btnKaydet.Location = new System.Drawing.Point(294, 493);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(88, 32);
             this.btnKaydet.TabIndex = 10;
@@ -261,7 +247,7 @@ namespace DershaneOtomasyonu
             // 
             // cmbSinif
             // 
-            this.cmbSinif.Location = new System.Drawing.Point(182, 511);
+            this.cmbSinif.Location = new System.Drawing.Point(195, 394);
             this.cmbSinif.Name = "cmbSinif";
             this.cmbSinif.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbSinif.Properties.Appearance.Options.UseFont = true;
@@ -278,7 +264,7 @@ namespace DershaneOtomasyonu
             // txtSoyad
             // 
             this.txtSoyad.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSoyad.Location = new System.Drawing.Point(182, 383);
+            this.txtSoyad.Location = new System.Drawing.Point(195, 266);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(187, 26);
             this.txtSoyad.TabIndex = 7;
@@ -286,7 +272,7 @@ namespace DershaneOtomasyonu
             // txtAd
             // 
             this.txtAd.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAd.Location = new System.Drawing.Point(182, 342);
+            this.txtAd.Location = new System.Drawing.Point(195, 225);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(187, 26);
             this.txtAd.TabIndex = 6;
@@ -295,7 +281,7 @@ namespace DershaneOtomasyonu
             // 
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtID.Location = new System.Drawing.Point(182, 217);
+            this.txtID.Location = new System.Drawing.Point(195, 100);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(187, 26);
             this.txtID.TabIndex = 5;
@@ -304,7 +290,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(105, 514);
+            this.labelControl5.Location = new System.Drawing.Point(118, 397);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(66, 18);
             this.labelControl5.TabIndex = 4;
@@ -314,7 +300,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(80, 474);
+            this.labelControl4.Location = new System.Drawing.Point(93, 357);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(92, 18);
             this.labelControl4.TabIndex = 3;
@@ -324,7 +310,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(122, 386);
+            this.labelControl3.Location = new System.Drawing.Point(135, 269);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 18);
             this.labelControl3.TabIndex = 2;
@@ -334,7 +320,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(145, 342);
+            this.labelControl2.Location = new System.Drawing.Point(158, 225);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(22, 18);
             this.labelControl2.TabIndex = 1;
@@ -344,7 +330,7 @@ namespace DershaneOtomasyonu
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(146, 220);
+            this.labelControl1.Location = new System.Drawing.Point(159, 103);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(21, 18);
             this.labelControl1.TabIndex = 0;
@@ -358,8 +344,7 @@ namespace DershaneOtomasyonu
             this.xtraTabControl1.Size = new System.Drawing.Size(535, 787);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage1});
             // 
             // xtraTabControl2
             // 
@@ -478,6 +463,25 @@ namespace DershaneOtomasyonu
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView4_FocusedRowObjectChanged);
             // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(126, 438);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(58, 18);
+            this.labelControl9.TabIndex = 22;
+            this.labelControl9.Text = "Kayıt Yılı:";
+            // 
+            // mskYil
+            // 
+            this.mskYil.Location = new System.Drawing.Point(195, 435);
+            this.mskYil.Mask = "0000";
+            this.mskYil.Name = "mskYil";
+            this.mskYil.Size = new System.Drawing.Size(187, 21);
+            this.mskYil.TabIndex = 23;
+            this.mskYil.ValidatingType = typeof(System.DateTime);
+            // 
             // FormOgrenciler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,7 +498,6 @@ namespace DershaneOtomasyonu
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSinif.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -517,13 +520,10 @@ namespace DershaneOtomasyonu
         }
 
         #endregion
-
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private System.Windows.Forms.MaskedTextBox mskTelefon;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton btnTemizle;
         private DevExpress.XtraEditors.SimpleButton btnGuncelle;
         private DevExpress.XtraEditors.SimpleButton btnSil;
@@ -556,5 +556,7 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private System.Windows.Forms.MaskedTextBox mskYil;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

@@ -16,23 +16,19 @@ namespace DershaneOtomasyonu
         {
             InitializeComponent();
         }
+        FormNotGiris frm4;
 
-        FormNotGiris frm5;
-
-        //Şuan sadece kullanıcı TC aldık
         public string kullaniciTC;
 
-        private void btnNotGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnNotGiris_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            if (frm5 == null || frm5.IsDisposed)
+            if (frm4 == null || frm4.IsDisposed)
             {
-                frm5 = new FormNotGiris();
-                frm5.TC = kullaniciTC; //ekledik
-                frm5.MdiParent = this;
-                frm5.Show();
+                frm4 = new FormNotGiris();
+                frm4.TC = kullaniciTC; //ekledik
+                frm4.MdiParent = this;
+                frm4.Show();
             }
-
         }
     }
 }

@@ -38,20 +38,6 @@ namespace DershaneOtomasyonu
             this.LblOgrtBrans = new DevExpress.XtraEditors.LabelControl();
             this.LblOgrtTC = new DevExpress.XtraEditors.LabelControl();
             this.LblOgrtAdSoyad = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.chksozlu3 = new DevExpress.XtraEditors.CheckEdit();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
@@ -81,9 +67,34 @@ namespace DershaneOtomasyonu
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.TxtSozlu2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chksozlu3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtOrtalama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSinav1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSinav2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbSinif.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -98,19 +109,6 @@ namespace DershaneOtomasyonu
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chksozlu3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtOrtalama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSinav1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSinav2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbSinif.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -122,199 +120,80 @@ namespace DershaneOtomasyonu
             this.groupControl1.Controls.Add(this.LblOgrtBrans);
             this.groupControl1.Controls.Add(this.LblOgrtTC);
             this.groupControl1.Controls.Add(this.LblOgrtAdSoyad);
-            this.groupControl1.Controls.Add(this.pictureEdit1);
-            this.groupControl1.Location = new System.Drawing.Point(12, 3);
+            this.groupControl1.Location = new System.Drawing.Point(1, 1);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(218, 559);
-            this.groupControl1.TabIndex = 1;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Öğretmen Bilgileri";
             // 
             // BtnSil
             // 
-            this.BtnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSil.ImageOptions.Image")));
-            this.BtnSil.Location = new System.Drawing.Point(53, 370);
+            this.BtnSil.Location = new System.Drawing.Point(87, 354);
             this.BtnSil.Name = "BtnSil";
             this.BtnSil.Size = new System.Drawing.Size(106, 37);
             this.BtnSil.TabIndex = 30;
             this.BtnSil.Text = "Sil";
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(53, 289);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(28, 265);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(88, 13);
+            this.labelControl3.Size = new System.Drawing.Size(132, 19);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Öğretmenin Branşı";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(53, 249);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(28, 181);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(96, 13);
+            this.labelControl2.Size = new System.Drawing.Size(150, 19);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "T.C. Kimlik Numarası";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(53, 207);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(28, 104);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(109, 13);
+            this.labelControl1.Size = new System.Drawing.Size(165, 19);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Öğretmenin Adı Soyadı";
             // 
             // LblOgrtBrans
             // 
-            this.LblOgrtBrans.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblOgrtBrans.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LblOgrtBrans.Appearance.Options.UseFont = true;
-            this.LblOgrtBrans.Location = new System.Drawing.Point(53, 308);
+            this.LblOgrtBrans.Location = new System.Drawing.Point(31, 295);
             this.LblOgrtBrans.Name = "LblOgrtBrans";
-            this.LblOgrtBrans.Size = new System.Drawing.Size(85, 16);
+            this.LblOgrtBrans.Size = new System.Drawing.Size(110, 19);
             this.LblOgrtBrans.TabIndex = 3;
             this.LblOgrtBrans.Text = "labelControl3";
             // 
             // LblOgrtTC
             // 
-            this.LblOgrtTC.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblOgrtTC.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LblOgrtTC.Appearance.Options.UseFont = true;
-            this.LblOgrtTC.Location = new System.Drawing.Point(53, 267);
+            this.LblOgrtTC.Location = new System.Drawing.Point(31, 214);
             this.LblOgrtTC.Name = "LblOgrtTC";
-            this.LblOgrtTC.Size = new System.Drawing.Size(85, 16);
+            this.LblOgrtTC.Size = new System.Drawing.Size(110, 19);
             this.LblOgrtTC.TabIndex = 2;
             this.LblOgrtTC.Text = "labelControl2";
             // 
             // LblOgrtAdSoyad
             // 
-            this.LblOgrtAdSoyad.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblOgrtAdSoyad.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LblOgrtAdSoyad.Appearance.Options.UseFont = true;
-            this.LblOgrtAdSoyad.Location = new System.Drawing.Point(53, 227);
+            this.LblOgrtAdSoyad.Location = new System.Drawing.Point(31, 129);
             this.LblOgrtAdSoyad.Name = "LblOgrtAdSoyad";
-            this.LblOgrtAdSoyad.Size = new System.Drawing.Size(85, 16);
+            this.LblOgrtAdSoyad.Size = new System.Drawing.Size(110, 19);
             this.LblOgrtAdSoyad.TabIndex = 1;
             this.LblOgrtAdSoyad.Text = "labelControl1";
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.Location = new System.Drawing.Point(56, 52);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(103, 132);
-            this.pictureEdit1.TabIndex = 0;
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(236, 6);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(903, 556);
-            this.xtraTabControl1.TabIndex = 6;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2,
-            this.xtraTabPage3,
-            this.xtraTabPage4});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.gridControl1);
-            this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(901, 512);
-            this.xtraTabPage1.Text = "5.SINIF";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(901, 512);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.gridControl2);
-            this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(901, 512);
-            this.xtraTabPage2.Text = "6.SINIF";
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(901, 512);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Controls.Add(this.gridControl3);
-            this.xtraTabPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage3.ImageOptions.Image")));
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(901, 512);
-            this.xtraTabPage3.Text = "7.SINIF";
-            // 
-            // gridControl3
-            // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(0, 0);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(901, 512);
-            this.gridControl3.TabIndex = 0;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // xtraTabPage4
-            // 
-            this.xtraTabPage4.Controls.Add(this.gridControl4);
-            this.xtraTabPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage4.ImageOptions.Image")));
-            this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(901, 512);
-            this.xtraTabPage4.Text = "8.SINIF";
-            // 
-            // gridControl4
-            // 
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(0, 0);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(901, 512);
-            this.gridControl4.TabIndex = 0;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // gridView4
-            // 
-            this.gridView4.GridControl = this.gridControl4;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl2
             // 
@@ -346,10 +225,10 @@ namespace DershaneOtomasyonu
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.TxtSozlu2);
             this.groupControl2.Controls.Add(this.labelControl4);
-            this.groupControl2.Location = new System.Drawing.Point(1145, 14);
+            this.groupControl2.Location = new System.Drawing.Point(1132, 7);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(218, 548);
-            this.groupControl2.TabIndex = 7;
+            this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Not Giriş Paneli";
             // 
             // chksozlu3
@@ -359,6 +238,7 @@ namespace DershaneOtomasyonu
             this.chksozlu3.Properties.Caption = "";
             this.chksozlu3.Size = new System.Drawing.Size(31, 20);
             this.chksozlu3.TabIndex = 30;
+            this.chksozlu3.CheckedChanged += new System.EventHandler(this.chksozlu3_CheckedChanged);
             // 
             // lookUpEdit1
             // 
@@ -369,6 +249,7 @@ namespace DershaneOtomasyonu
             this.lookUpEdit1.Properties.NullText = "Öğrenci Seçiniz";
             this.lookUpEdit1.Size = new System.Drawing.Size(100, 20);
             this.lookUpEdit1.TabIndex = 29;
+            this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
             // labelControl14
             // 
@@ -394,6 +275,7 @@ namespace DershaneOtomasyonu
             this.BtnHesapla.Size = new System.Drawing.Size(135, 38);
             this.BtnHesapla.TabIndex = 26;
             this.BtnHesapla.Text = "Hesapla";
+            this.BtnHesapla.Click += new System.EventHandler(this.BtnHesapla_Click);
             // 
             // labelControl8
             // 
@@ -450,6 +332,7 @@ namespace DershaneOtomasyonu
             this.BtnGuncelle.Size = new System.Drawing.Size(135, 37);
             this.BtnGuncelle.TabIndex = 22;
             this.BtnGuncelle.Text = "Güncelle";
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // labelControl9
             // 
@@ -467,6 +350,7 @@ namespace DershaneOtomasyonu
             this.BtnKaydet.Size = new System.Drawing.Size(135, 37);
             this.BtnKaydet.TabIndex = 21;
             this.BtnKaydet.Text = "Kaydet";
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // TxtSinav2
             // 
@@ -520,6 +404,7 @@ namespace DershaneOtomasyonu
             "8.SINIF"});
             this.CmbSinif.Size = new System.Drawing.Size(100, 20);
             this.CmbSinif.TabIndex = 6;
+            this.CmbSinif.SelectedIndexChanged += new System.EventHandler(this.CmbSinif_SelectedIndexChanged);
             // 
             // TxtSozlu1
             // 
@@ -583,35 +468,133 @@ namespace DershaneOtomasyonu
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "ID:";
             // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Location = new System.Drawing.Point(225, 7);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(903, 556);
+            this.xtraTabControl1.TabIndex = 5;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2,
+            this.xtraTabPage3,
+            this.xtraTabPage4});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.gridControl1);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(901, 531);
+            this.xtraTabPage1.Text = "5.SINIF";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(901, 531);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView1_FocusedRowObjectChanged);
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(901, 531);
+            this.xtraTabPage2.Text = "6.SINIF";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(901, 531);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView2_FocusedRowObjectChanged);
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.gridControl3);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(901, 531);
+            this.xtraTabPage3.Text = "7.SINIF";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl3.Location = new System.Drawing.Point(0, 0);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(901, 531);
+            this.gridControl3.TabIndex = 0;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView3_FocusedRowObjectChanged);
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.gridControl4);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(901, 531);
+            this.xtraTabPage4.Text = "8.SINIF";
+            // 
+            // gridControl4
+            // 
+            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl4.Location = new System.Drawing.Point(0, 0);
+            this.gridControl4.MainView = this.gridView4;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(901, 531);
+            this.gridControl4.TabIndex = 0;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView4_FocusedRowObjectChanged);
+            // 
             // FormNotGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 716);
-            this.Controls.Add(this.groupControl2);
+            this.ClientSize = new System.Drawing.Size(1354, 561);
             this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "FormNotGiris";
-            this.Text = "FormNotGiris";
+            this.Text = "FrmNotGiris";
             this.Load += new System.EventHandler(this.FormNotGiris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            this.xtraTabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            this.xtraTabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -626,6 +609,20 @@ namespace DershaneOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.CmbSinif.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -640,7 +637,6 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraEditors.LabelControl LblOgrtBrans;
         private DevExpress.XtraEditors.LabelControl LblOgrtTC;
         private DevExpress.XtraEditors.LabelControl LblOgrtAdSoyad;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraGrid.GridControl gridControl1;
