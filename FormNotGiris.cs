@@ -20,7 +20,7 @@ namespace DershaneOtomasyonu
 
         mysqlbaglantisi bgl = new mysqlbaglantisi();
 
-        //ekledik
+     
         public string TC;
 
         void temizle()
@@ -29,28 +29,16 @@ namespace DershaneOtomasyonu
             CmbSinif.Text = "";
             lookUpEdit1.Text = "";
             LblTC.Text = "";
-            //CmbBrans.Text= "";
             TxtSinav1.Text = "";
             TxtSinav2.Text = "";
-            TxtSozlu1.Text = "";
-            TxtSozlu2.Text = "";
-            TxtSozlu3.Text = "Girilmedi";
-            // Ortalama ve Geçti kaldı kısmına gerek yok, tekrar hesaplansın
             TxtOrtalama.Text = "";
             durum = false;
-            chksozlu3.Checked = true;
         }
-        /*void ogrtgetir()
-        {
-            var sorgu = db.TBL_OGRETMENLER.Where(x => x.OGRTTC == TC).SingleOrDefault();
-            LblOgrtAdSoyad.Text = sorgu.OGRTAD + " " + sorgu.OGRTSOYAD;
-            LblOgrtBrans.Text = sorgu.OGRTBRANS;
-        }
-        */
+
         void ogrtgetir()
         {
             MySqlCommand komut = new MySqlCommand("Select ad, soyad, brans from tbl_ogretmenler where ogrt_tc = @p1", bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", TC); //burasi TC idi
+            komut.Parameters.AddWithValue("@p1", TC); 
 
             MySqlDataReader dr7 = komut.ExecuteReader();
             if (dr7.Read())
@@ -65,25 +53,6 @@ namespace DershaneOtomasyonu
 
             dr7.Close();
         }
-
-        /*
-        void ogrgetir()
-        {
-            var sorgu = from item in db.TBL_OGRENCILER
-                        where CmbSinif.Text == item.OGRSINIF
-                        select new
-                        {
-                            ID = item.OGRID,
-                            ADSOYAD = item.OGRAD + " " + item.OGRSOYAD,
-                            TCKIMLIK = item.OGRTC,
-                        };
-
-            lookUpEdit1.Properties.ValueMember = "ID";
-            lookUpEdit1.Properties.DisplayMember = "ADSOYAD";
-            lookUpEdit1.Properties.NullText = "Öğrenci Seçiniz";
-            lookUpEdit1.Properties.DataSource = sorgu.ToList();
-        }
-        */
 
         void ogrgetir() {
             MySqlCommand komut = new MySqlCommand("Select id, CONCAT(öğrenci.ad, ' ', öğrenci.soyad) AS adsoyad,tc from öğrenci where ogr_sinif = @p1", bgl.baglanti());
@@ -100,39 +69,6 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Properties.DataSource = dataTable;
         }
 
-
-
-        /*
-         void ogrnotlistele()
-        {
-            var liste1 = from item in db.TBL_NOTLAR
-                         where item.NOTBRANS == LblOgrtBrans.Text &&
-                               item.NOTSINIF == "5.SINIF"
-                         select item;
-
-            gridControl1.DataSource = liste1.ToList();
-
-            var liste2 = from item in db.TBL_NOTLAR
-                         where item.NOTBRANS == LblOgrtBrans.Text &&
-                               item.NOTSINIF == "6.SINIF"
-                         select item;
-
-            gridControl2.DataSource = liste2.ToList();
-
-            var liste3 = from item in db.TBL_NOTLAR
-                         where item.NOTBRANS == LblOgrtBrans.Text &&
-                               item.NOTSINIF == "7.SINIF"
-                         select item;
-
-            gridControl3.DataSource = liste3.ToList();
-
-            var liste4 = from item in db.TBL_NOTLAR
-                         where item.NOTBRANS == LblOgrtBrans.Text &&
-                               item.NOTSINIF == "8.SINIF"
-                         select item;
-
-            gridControl4.DataSource = liste4.ToList();
-        }*/
 
         void ogrnotlistele()
         {
@@ -171,16 +107,6 @@ namespace DershaneOtomasyonu
             gridControl4.DataSource = dt4;
         }
 
-        /*
-        void mudurnotlistele()
-        {
-            gridControl1.DataSource = NotListele5();
-            gridControl2.DataSource = NotListele6();
-            gridControl3.DataSource = db.NotListele7();
-            gridControl4.DataSource = db.NotListele8();
-        }
-        */
-
         void mudurnotlistele()
         {
             MySqlCommand komut5 = new MySqlCommand("SELECT * FROM tbl_notlar WHERE NOTSINIF = '5.SINIF'", bgl.baglanti());
@@ -218,8 +144,6 @@ namespace DershaneOtomasyonu
             if (LblOgrtBrans.Text == "Müdür" || LblOgrtBrans.Text == "Müdür Yardımcısı")
             {
                 mudurnotlistele();
-                BtnSil.Visible = true;
-
                 MySqlCommand komut9 = new MySqlCommand("SELECT BRANSID,BRANSAD from tbl_branslar", bgl.baglanti());
                 MySqlDataAdapter da9 = new MySqlDataAdapter(komut9);
                 DataTable dt9 = new DataTable();
@@ -235,49 +159,11 @@ namespace DershaneOtomasyonu
                 CmbBrans.Text = LblOgrtBrans.Text;
                 CmbBrans.Enabled = false;
                 ogrnotlistele();
-                BtnSil.Visible = false;
+  
 
             }
             temizle();
-
         }
-
-
-        /*
-        private void FrmNotGiris_Load(object sender, EventArgs e)
-        {
-
-            LblOgrtTC.Text = TC;
-            ogrtgetir();
-
-
-            if (LblOgrtBrans.Text == "MÜDÜR" || LblOgrtBrans.Text == "MÜDÜR YARDIMCISI")
-            {
-                mudurnotlistele();
-                BtnSil.Visible = true;
-
-                var sorgu = from item in db.TBL_BRANSLAR
-                            select new
-                            {
-                                ID = item.BRANSID,
-                                BRANS = item.BRANSAD,
-                            };
-                CmbBrans.DataSource = sorgu.ToList();
-                CmbBrans.DisplayMember = "BRANS";
-                CmbBrans.ValueMember = "ID";
-            }
-            else
-            {
-                CmbBrans.Text = LblOgrtBrans.Text;
-                CmbBrans.Enabled = false;
-                ogrnotlistele();
-                BtnSil.Visible = false;
-            }
-
-            temizle();
-
-        }
-        */
 
 
         private void CmbSinif_SelectedIndexChanged(object sender, EventArgs e)
@@ -287,8 +173,7 @@ namespace DershaneOtomasyonu
 
 
 
-
-        double sinav1, sinav2, sozlu1, sozlu2, sozlu3, ortalama;
+        double dogrusayisi, yanlissayisi, toplamnet;
 
         //Araçlara Veri Aktarma
         private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
@@ -300,20 +185,8 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NOTADSOYAD").ToString();
             LblTC.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NOTTC").ToString();
             CmbBrans.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NOTBRANS").ToString();
-            TxtSinav1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SINAV1").ToString();
-            TxtSinav2.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SINAV2").ToString();
-            TxtSozlu1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SOZLU1").ToString();
-            TxtSozlu2.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SOZLU2").ToString();
-            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SOZLU3")?.ToString() == null)
-            {
-                TxtSozlu3.Text = "Girilmedi";
-                chksozlu3.Checked = true;
-            }
-            else
-            {
-                TxtSozlu3.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SOZLU3")?.ToString();
-                chksozlu3.Checked = false;
-            }
+            TxtSinav1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DOGRUSAYİSİ").ToString();
+            TxtSinav2.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "YANLİSSAYİSİ").ToString();
             // Ortalama ve Geçti kaldı kısmına gerek yok, tekrar hesaplansın
             TxtOrtalama.Text = "";
             durum = false;
@@ -328,20 +201,8 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "NOTADSOYAD").ToString();
             LblTC.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "NOTTC").ToString();
             CmbBrans.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "NOTBRANS").ToString();
-            TxtSinav1.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SINAV1").ToString();
-            TxtSinav2.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SINAV2").ToString();
-            TxtSozlu1.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SOZLU1").ToString();
-            TxtSozlu2.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SOZLU2").ToString();
-            if (gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SOZLU3")?.ToString() == null)
-            {
-                //TxtSozlu3.Text = "Girilmedi";
-                chksozlu3.Checked = true;
-            }
-            else
-            {
-                TxtSozlu3.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "SOZLU3")?.ToString();
-                chksozlu3.Checked = false;
-            }
+            TxtSinav1.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "DOGRUSAYİSİ").ToString();
+            TxtSinav2.Text = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "YANLİSSAYİSİ").ToString();
             // Ortalama ve Geçti kaldı kısmına gerek yok, tekrar hesaplansın
             TxtOrtalama.Text = "";
             durum = false;
@@ -354,20 +215,8 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "NOTADSOYAD").ToString();
             LblTC.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "NOTTC").ToString();
             CmbBrans.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "NOTBRANS").ToString();
-            TxtSinav1.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SINAV1").ToString();
-            TxtSinav2.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SINAV2").ToString();
-            TxtSozlu1.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SOZLU1").ToString();
-            TxtSozlu2.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SOZLU2").ToString();
-            if (gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SOZLU3")?.ToString() == null)
-            {
-                //TxtSozlu3.Text = "Girilmedi" ;
-                chksozlu3.Checked = true;
-            }
-            else
-            {
-                TxtSozlu3.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "SOZLU3")?.ToString();
-                chksozlu3.Checked = false;
-            }
+            TxtSinav1.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "DOGRUSAYİSİ").ToString();
+            TxtSinav2.Text = gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "YANLİSSAYİSİ").ToString();
             // Ortalama ve Geçti kaldı kısmına gerek yok, tekrar hesaplansın
             TxtOrtalama.Text = "";
             durum = false;
@@ -380,87 +229,28 @@ namespace DershaneOtomasyonu
             lookUpEdit1.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "NOTADSOYAD").ToString();
             LblTC.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "NOTTC").ToString();
             CmbBrans.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "NOTBRANS").ToString();
-            TxtSinav1.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SINAV1").ToString();
-            TxtSinav2.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SINAV2").ToString();
-            TxtSozlu1.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SOZLU1").ToString();
-            TxtSozlu2.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SOZLU2").ToString();
-            if (gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SOZLU3")?.ToString() == null)
-            {
-                //TxtSozlu3.Text = "Girilmedi";
-                chksozlu3.Checked = true;
-            }
-            else
-            {
-                TxtSozlu3.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "SOZLU3")?.ToString();
-                chksozlu3.Checked = false;
-            }
+            TxtSinav1.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "DOGRUSAYİSİ").ToString();
+            TxtSinav2.Text = gridView4.GetRowCellValue(gridView4.FocusedRowHandle, "YANLİSSAYİSİ").ToString();
             // Ortalama ve Geçti kaldı kısmına gerek yok, tekrar hesaplansın
             TxtOrtalama.Text = "";
             durum = false;
         }
 
-        /*void guncellesozlu3var()
-        {
-            int id = Convert.ToInt32(TxtID.Text);
-            var item = db.TBL_NOTLAR.FirstOrDefault(x => x.NOTID == id);
-            item.SINAV1 = Convert.ToByte(TxtSinav1.Text);
-            item.SINAV2 = Convert.ToByte(TxtSinav2.Text);
-            item.SOZLU1 = Convert.ToByte(TxtSozlu1.Text);
-            item.SOZLU2 = Convert.ToByte(TxtSozlu2.Text);
-            
-            item.ORTALAMA = Convert.ToDecimal(TxtOrtalama.Text);
-            item.DURUM = durum;
-            db.SaveChanges();
-        }*/
 
-        /*
+        //ders netleri guncelleme
         void guncelle()
         {
             int id = Convert.ToInt32(TxtID.Text);
-            var item = db.TBL_NOTLAR.FirstOrDefault(x => x.NOTID == id);
-            item.SINAV1 = Convert.ToByte(TxtSinav1.Text);
-            item.SINAV2 = Convert.ToByte(TxtSinav2.Text);
-            item.SOZLU1 = Convert.ToByte(TxtSozlu1.Text);
-            item.SOZLU2 = Convert.ToByte(TxtSozlu2.Text);
-            if (TxtSozlu3.Text == "Girilmedi" || TxtSozlu3.Text == "")
-            {
-                item.SOZLU3 = null;
-            }
-            else
-            {
-                item.SOZLU3 = Convert.ToByte(TxtSozlu3.Text);
-            }
-            item.ORTALAMA = Convert.ToDecimal(TxtOrtalama.Text);
-            item.DURUM = durum;
-            db.SaveChanges();
-        }
-        */
-
-        //sinav notu guncelleme
-        void guncelle()
-        {
-            int id = Convert.ToInt32(TxtID.Text);
-            byte sinav1 = Convert.ToByte(TxtSinav1.Text);
-            byte sinav2 = Convert.ToByte(TxtSinav2.Text);
-            byte sozlu1 = Convert.ToByte(TxtSozlu1.Text);
-            byte sozlu2 = Convert.ToByte(TxtSozlu2.Text);
-            byte? sozlu3 = null;
-            if (!string.IsNullOrEmpty(TxtSozlu3.Text) && TxtSozlu3.Text != "Girilmedi")
-            {
-                sozlu3 = Convert.ToByte(TxtSozlu3.Text);
-            }
-            decimal ortalama = Convert.ToDecimal(TxtOrtalama.Text);
+            byte dogrusayisi = Convert.ToByte(TxtSinav1.Text);
+            byte yanlissayisi = Convert.ToByte(TxtSinav2.Text);
+            decimal toplamnet = Convert.ToDecimal(TxtOrtalama.Text);
 
 
-            MySqlCommand command = new MySqlCommand("UPDATE TBL_NOTLAR SET SINAV1 = @sinav1, SINAV2 = @sinav2, SOZLU1 = @sozlu1, SOZLU2 = @sozlu2, SOZLU3 = @sozlu3, ORTALAMA = @ortalama, DURUM = @durum WHERE NOTID = @id", bgl.baglanti());
+            MySqlCommand command = new MySqlCommand("UPDATE TBL_NOTLAR SET DOGRUSAYİSİ = @dogrusayisi, YANLİSSAYİSİ = @yanlissayisi, TOPLAMNET = @toplamnet WHERE NOTID = @id", bgl.baglanti());
 
-            command.Parameters.AddWithValue("@sinav1", sinav1);
-            command.Parameters.AddWithValue("@sinav2", sinav2);
-            command.Parameters.AddWithValue("@sozlu1", sozlu1);
-            command.Parameters.AddWithValue("@sozlu2", sozlu2);
-            command.Parameters.AddWithValue("@sozlu3", (object)sozlu3 ?? DBNull.Value);
-            command.Parameters.AddWithValue("@ortalama", ortalama);
-            command.Parameters.AddWithValue("@durum", durum);
+            command.Parameters.AddWithValue("@dogrusayisi", dogrusayisi);
+            command.Parameters.AddWithValue("@yanlissayisi", yanlissayisi);
+            command.Parameters.AddWithValue("@toplamnet", toplamnet);
             command.Parameters.AddWithValue("@id", id);
 
             command.ExecuteNonQuery();
@@ -496,21 +286,6 @@ namespace DershaneOtomasyonu
             LblTC.Text = ogrenciTC;
         }
 
-        private void chksozlu3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chksozlu3.Checked == true)
-            {
-                TxtSozlu3.Text = "Girilmedi";
-                TxtSozlu3.Enabled = false;
-            }
-            else
-            {
-                TxtSozlu3.Enabled = true;
-
-            }
-        }
-
-
 
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -523,61 +298,6 @@ namespace DershaneOtomasyonu
             mudurnotlistele();
 
         }
-
-        /*void kaydetsozlu3var()
-        {
-            TBL_NOTLAR komut = new TBL_NOTLAR();
-            komut.NOTSINIF = CmbSinif.Text;
-            komut.NOTADSOYAD = lookUpEdit1.Text;
-            komut.NOTTC = LblTC.Text;
-            komut.NOTBRANS = CmbBrans.Text;
-            komut.SINAV1 = Convert.ToByte(TxtSinav1.Text);
-            komut.SINAV2 = Convert.ToByte(TxtSinav2.Text);
-            komut.SOZLU1 = Convert.ToByte(TxtSozlu1.Text);
-            komut.SOZLU2 = Convert.ToByte(TxtSozlu2.Text);
-            
-            komut.ORTALAMA = Convert.ToDecimal(TxtOrtalama.Text);
-            komut.DURUM = durum;
-            db.TBL_NOTLAR.Add(komut);
-            db.SaveChanges();
-        }*/
-       /* void kaydet()
-        {
-            var sorgu = from item in db.TBL_NOTLAR
-                        where item.NOTTC == LblTC.Text &&
-                              item.NOTBRANS == CmbBrans.Text
-                        select item;
-            if (sorgu.Any())
-            {
-                MessageBox.Show("Öğrencinin " + CmbBrans.Text + " ders notu vardır");
-            }
-            else
-            {
-                TBL_NOTLAR komut = new TBL_NOTLAR();
-                komut.NOTSINIF = CmbSinif.Text;
-                komut.NOTADSOYAD = lookUpEdit1.Text;
-                komut.NOTTC = LblTC.Text;
-                komut.NOTBRANS = CmbBrans.Text;
-                komut.SINAV1 = Convert.ToByte(TxtSinav1.Text);
-                komut.SINAV2 = Convert.ToByte(TxtSinav2.Text);
-                komut.SOZLU1 = Convert.ToByte(TxtSozlu1.Text);
-                komut.SOZLU2 = Convert.ToByte(TxtSozlu2.Text);
-                if (TxtSozlu3.Text == "Girilmedi" || TxtSozlu3.Text != "")
-                {
-                    komut.SOZLU3 = null;
-                }
-                else
-                {
-                    komut.SOZLU3 = Convert.ToByte(TxtSozlu3.Text);
-                }
-                komut.DURUM = durum;
-                komut.ORTALAMA = Convert.ToDecimal(TxtOrtalama.Text);
-                db.TBL_NOTLAR.Add(komut);
-                db.SaveChanges();
-            }
-        }
-
-        */
 
         //not kaydetme
         void kaydet()
@@ -594,32 +314,20 @@ namespace DershaneOtomasyonu
 
             if (count > 0)
             {
-                MessageBox.Show("Öğrencinin " + brans + " ders notu vardır");
+                MessageBox.Show("Öğrencinin " + brans + " net bilgileri vardır");
             }
             else
             {
-                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO TBL_NOTLAR (NOTID,NOTSINIF, NOTADSOYAD, NOTTC, NOTBRANS, SINAV1, SINAV2, SOZLU1, SOZLU2, SOZLU3, DURUM, ORTALAMA) VALUES (@notid,@sinif, @adsoyad, @tc, @brans, @sinav1, @sinav2, @sozlu1, @sozlu2, @sozlu3, @durum, @ortalama)", bgl.baglanti());
+                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO TBL_NOTLAR (NOTID,NOTSINIF, NOTADSOYAD, NOTTC, NOTBRANS, DOGRUSAYİSİ, YANLİSSAYİSİ, TOPLAMNET) VALUES (@notid,@sinif, @adsoyad, @tc, @brans, @dogrusayisi, @yanlissayisi, @toplamnet)", bgl.baglanti());
                 insertCommand.Parameters.AddWithValue("@notid", TxtID.Text);
                 insertCommand.Parameters.AddWithValue("@sinif", CmbSinif.Text);
                 insertCommand.Parameters.AddWithValue("@adsoyad", lookUpEdit1.Text);
                 insertCommand.Parameters.AddWithValue("@tc", tc);
                 insertCommand.Parameters.AddWithValue("@brans", CmbBrans.Text);
-                insertCommand.Parameters.AddWithValue("@sinav1", Convert.ToByte(TxtSinav1.Text));
-                insertCommand.Parameters.AddWithValue("@sinav2", Convert.ToByte(TxtSinav2.Text));
-                insertCommand.Parameters.AddWithValue("@sozlu1", Convert.ToByte(TxtSozlu1.Text));
-                insertCommand.Parameters.AddWithValue("@sozlu2", Convert.ToByte(TxtSozlu2.Text));
-
-                if (TxtSozlu3.Text == "Girilmedi" || string.IsNullOrEmpty(TxtSozlu3.Text))
-                {
-                    insertCommand.Parameters.AddWithValue("@sozlu3", DBNull.Value);
-                }
-                else
-                {
-                    insertCommand.Parameters.AddWithValue("@sozlu3", Convert.ToByte(TxtSozlu3.Text));
-                }
-
-                insertCommand.Parameters.AddWithValue("@durum", durum);
-                insertCommand.Parameters.AddWithValue("@ortalama", Convert.ToDecimal(TxtOrtalama.Text));
+                insertCommand.Parameters.AddWithValue("@dogrusayisi", Convert.ToByte(TxtSinav1.Text));
+                insertCommand.Parameters.AddWithValue("@yanlissayisi", Convert.ToByte(TxtSinav2.Text));
+        
+                insertCommand.Parameters.AddWithValue("@toplamnet", Convert.ToDecimal(TxtOrtalama.Text));
 
                 insertCommand.ExecuteNonQuery();
             }
@@ -645,42 +353,18 @@ namespace DershaneOtomasyonu
         public bool durum;
         private void BtnHesapla_Click(object sender, EventArgs e)
         {
-            if (TxtSinav1.Text == "" || TxtSinav2.Text == "" || TxtSozlu1.Text == "" || TxtSozlu2.Text == "")
+            if (TxtSinav1.Text == "" || TxtSinav2.Text == "")
             {
-                MessageBox.Show("Eksik Sınav Notu Girdiniz!!!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Eksik Sınav Bilgisi Girdiniz!!!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
 
-                sinav1 = Convert.ToDouble(TxtSinav1.Text);
-                sinav2 = Convert.ToDouble(TxtSinav2.Text);
-                sozlu1 = Convert.ToDouble(TxtSozlu1.Text);
-                sozlu2 = Convert.ToDouble(TxtSozlu2.Text);
+                dogrusayisi = Convert.ToDouble(TxtSinav1.Text);
+                yanlissayisi = Convert.ToDouble(TxtSinav2.Text);
 
-                if (TxtSozlu3.Text == "Girilmedi" || TxtSozlu3.Text == "")
-                {
-                    ortalama = (((sinav1 + sinav2) + ((sozlu1 + sozlu2) / 2)) / 3);
-                    TxtOrtalama.Text = ortalama.ToString("0.00");
-                }
-                else
-                {
-                    sozlu3 = Convert.ToInt32(TxtSozlu3.Text);
-                    ortalama = (((sinav1 + sinav2) + ((sozlu1 + sozlu2 + sozlu3) / 3)) / 3);
-                    TxtOrtalama.Text = ortalama.ToString("0.00");
-                }
-
-                if (ortalama >= 45)
-                {
-                    checkEdit1.Checked = true;
-                    checkEdit1.Text = "Geçti";
-                    durum = true;
-                }
-                else
-                {
-                    checkEdit1.Checked = false;
-                    checkEdit1.Text = "Kaldı";
-                    durum = false;
-                }
+               toplamnet = (dogrusayisi - (yanlissayisi / 4));
+               TxtOrtalama.Text = toplamnet.ToString("0.00");
 
             }
 

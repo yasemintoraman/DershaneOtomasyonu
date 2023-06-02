@@ -26,7 +26,7 @@ namespace DershaneOtomasyonu
             {
                 frm4 = new FormNotGiris();
                 frm4.TC = kullaniciTC; //ekledik
-                frm4.MdiParent = this;
+                //frm4.MdiParent = this;
                 frm4.Show();
             }
         }

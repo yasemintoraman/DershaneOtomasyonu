@@ -31,7 +31,6 @@ namespace DershaneOtomasyonu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNotGiris));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -39,14 +38,10 @@ namespace DershaneOtomasyonu
             this.LblOgrtTC = new DevExpress.XtraEditors.LabelControl();
             this.LblOgrtAdSoyad = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.chksozlu3 = new DevExpress.XtraEditors.CheckEdit();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.BtnHesapla = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.CmbBrans = new System.Windows.Forms.ComboBox();
-            this.TxtSozlu3 = new DevExpress.XtraEditors.TextEdit();
             this.TxtOrtalama = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.TxtSinav1 = new DevExpress.XtraEditors.TextEdit();
@@ -55,17 +50,12 @@ namespace DershaneOtomasyonu
             this.BtnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.TxtSinav2 = new DevExpress.XtraEditors.TextEdit();
             this.LblTC = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.TxtID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.CmbSinif = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.TxtSozlu1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.TxtSozlu2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -84,17 +74,12 @@ namespace DershaneOtomasyonu
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chksozlu3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtOrtalama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSinav1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSinav2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbSinif.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -113,7 +98,6 @@ namespace DershaneOtomasyonu
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.BtnSil);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -125,15 +109,6 @@ namespace DershaneOtomasyonu
             this.groupControl1.Size = new System.Drawing.Size(218, 559);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Öğretmen Bilgileri";
-            // 
-            // BtnSil
-            // 
-            this.BtnSil.Location = new System.Drawing.Point(87, 354);
-            this.BtnSil.Name = "BtnSil";
-            this.BtnSil.Size = new System.Drawing.Size(106, 37);
-            this.BtnSil.TabIndex = 30;
-            this.BtnSil.Text = "Sil";
-            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // labelControl3
             // 
@@ -197,14 +172,10 @@ namespace DershaneOtomasyonu
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.chksozlu3);
             this.groupControl2.Controls.Add(this.lookUpEdit1);
-            this.groupControl2.Controls.Add(this.labelControl14);
-            this.groupControl2.Controls.Add(this.checkEdit1);
             this.groupControl2.Controls.Add(this.BtnHesapla);
             this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Controls.Add(this.CmbBrans);
-            this.groupControl2.Controls.Add(this.TxtSozlu3);
             this.groupControl2.Controls.Add(this.TxtOrtalama);
             this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.TxtSinav1);
@@ -213,32 +184,18 @@ namespace DershaneOtomasyonu
             this.groupControl2.Controls.Add(this.BtnKaydet);
             this.groupControl2.Controls.Add(this.TxtSinav2);
             this.groupControl2.Controls.Add(this.LblTC);
-            this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.TxtID);
             this.groupControl2.Controls.Add(this.labelControl13);
             this.groupControl2.Controls.Add(this.CmbSinif);
-            this.groupControl2.Controls.Add(this.TxtSozlu1);
             this.groupControl2.Controls.Add(this.labelControl7);
-            this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.labelControl5);
-            this.groupControl2.Controls.Add(this.TxtSozlu2);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Location = new System.Drawing.Point(1132, 7);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(218, 548);
             this.groupControl2.TabIndex = 4;
             this.groupControl2.Text = "Not Giriş Paneli";
-            // 
-            // chksozlu3
-            // 
-            this.chksozlu3.Location = new System.Drawing.Point(178, 285);
-            this.chksozlu3.Name = "chksozlu3";
-            this.chksozlu3.Properties.Caption = "";
-            this.chksozlu3.Size = new System.Drawing.Size(31, 20);
-            this.chksozlu3.TabIndex = 30;
-            this.chksozlu3.CheckedChanged += new System.EventHandler(this.chksozlu3_CheckedChanged);
             // 
             // lookUpEdit1
             // 
@@ -250,22 +207,6 @@ namespace DershaneOtomasyonu
             this.lookUpEdit1.Size = new System.Drawing.Size(100, 20);
             this.lookUpEdit1.TabIndex = 29;
             this.lookUpEdit1.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(68, 337);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(35, 13);
-            this.labelControl14.TabIndex = 28;
-            this.labelControl14.Text = "Durum:";
-            // 
-            // checkEdit1
-            // 
-            this.checkEdit1.Location = new System.Drawing.Point(109, 334);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "";
-            this.checkEdit1.Size = new System.Drawing.Size(75, 20);
-            this.checkEdit1.TabIndex = 27;
             // 
             // BtnHesapla
             // 
@@ -279,11 +220,11 @@ namespace DershaneOtomasyonu
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(55, 181);
+            this.labelControl8.Location = new System.Drawing.Point(50, 180);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(40, 13);
+            this.labelControl8.Size = new System.Drawing.Size(63, 13);
             this.labelControl8.TabIndex = 4;
-            this.labelControl8.Text = "Sınav-1:";
+            this.labelControl8.Text = "Doğru Sayısı:";
             // 
             // CmbBrans
             // 
@@ -293,18 +234,9 @@ namespace DershaneOtomasyonu
             this.CmbBrans.Size = new System.Drawing.Size(100, 21);
             this.CmbBrans.TabIndex = 25;
             // 
-            // TxtSozlu3
-            // 
-            this.TxtSozlu3.EditValue = "";
-            this.TxtSozlu3.Location = new System.Drawing.Point(126, 282);
-            this.TxtSozlu3.Name = "TxtSozlu3";
-            this.TxtSozlu3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtSozlu3.Size = new System.Drawing.Size(47, 20);
-            this.TxtSozlu3.TabIndex = 16;
-            // 
             // TxtOrtalama
             // 
-            this.TxtOrtalama.Location = new System.Drawing.Point(126, 308);
+            this.TxtOrtalama.Location = new System.Drawing.Point(126, 235);
             this.TxtOrtalama.Name = "TxtOrtalama";
             this.TxtOrtalama.Size = new System.Drawing.Size(47, 20);
             this.TxtOrtalama.TabIndex = 18;
@@ -336,11 +268,11 @@ namespace DershaneOtomasyonu
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(55, 207);
+            this.labelControl9.Location = new System.Drawing.Point(50, 208);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(40, 13);
+            this.labelControl9.Size = new System.Drawing.Size(61, 13);
             this.labelControl9.TabIndex = 5;
-            this.labelControl9.Text = "Sınav-2:";
+            this.labelControl9.Text = "Yanlış Sayısı:";
             // 
             // BtnKaydet
             // 
@@ -367,14 +299,6 @@ namespace DershaneOtomasyonu
             this.LblTC.TabIndex = 17;
             this.LblTC.Text = "labelControl14";
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(55, 233);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(65, 13);
-            this.labelControl10.TabIndex = 7;
-            this.labelControl10.Text = "Sözlü Notu-1:";
-            // 
             // TxtID
             // 
             this.TxtID.Location = new System.Drawing.Point(73, 43);
@@ -384,11 +308,11 @@ namespace DershaneOtomasyonu
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(55, 311);
+            this.labelControl13.Location = new System.Drawing.Point(53, 238);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(48, 13);
+            this.labelControl13.Size = new System.Drawing.Size(58, 13);
             this.labelControl13.TabIndex = 10;
-            this.labelControl13.Text = "Ortalama:";
+            this.labelControl13.Text = "Toplam Net:";
             // 
             // CmbSinif
             // 
@@ -406,13 +330,6 @@ namespace DershaneOtomasyonu
             this.CmbSinif.TabIndex = 6;
             this.CmbSinif.SelectedIndexChanged += new System.EventHandler(this.CmbSinif_SelectedIndexChanged);
             // 
-            // TxtSozlu1
-            // 
-            this.TxtSozlu1.Location = new System.Drawing.Point(126, 230);
-            this.TxtSozlu1.Name = "TxtSozlu1";
-            this.TxtSozlu1.Size = new System.Drawing.Size(47, 20);
-            this.TxtSozlu1.TabIndex = 14;
-            // 
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(13, 71);
@@ -420,14 +337,6 @@ namespace DershaneOtomasyonu
             this.labelControl7.Size = new System.Drawing.Size(24, 13);
             this.labelControl7.TabIndex = 3;
             this.labelControl7.Text = "Sınıf:";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(55, 259);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(65, 13);
-            this.labelControl11.TabIndex = 8;
-            this.labelControl11.Text = "Sözlü Notu-2:";
             // 
             // labelControl6
             // 
@@ -437,14 +346,6 @@ namespace DershaneOtomasyonu
             this.labelControl6.TabIndex = 2;
             this.labelControl6.Text = "T.C.:";
             // 
-            // labelControl12
-            // 
-            this.labelControl12.Location = new System.Drawing.Point(55, 285);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(65, 13);
-            this.labelControl12.TabIndex = 9;
-            this.labelControl12.Text = "Sözlü Notu-3:";
-            // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(13, 142);
@@ -452,13 +353,6 @@ namespace DershaneOtomasyonu
             this.labelControl5.Size = new System.Drawing.Size(31, 13);
             this.labelControl5.TabIndex = 1;
             this.labelControl5.Text = "Branş:";
-            // 
-            // TxtSozlu2
-            // 
-            this.TxtSozlu2.Location = new System.Drawing.Point(126, 256);
-            this.TxtSozlu2.Name = "TxtSozlu2";
-            this.TxtSozlu2.Size = new System.Drawing.Size(47, 20);
-            this.TxtSozlu2.TabIndex = 15;
             // 
             // labelControl4
             // 
@@ -598,17 +492,12 @@ namespace DershaneOtomasyonu
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chksozlu3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtOrtalama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSinav1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSinav2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbSinif.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtSozlu2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -630,7 +519,6 @@ namespace DershaneOtomasyonu
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -651,14 +539,10 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.CheckEdit chksozlu3;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.SimpleButton BtnHesapla;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.ComboBox CmbBrans;
-        private DevExpress.XtraEditors.TextEdit TxtSozlu3;
         private DevExpress.XtraEditors.TextEdit TxtOrtalama;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.TextEdit TxtSinav1;
@@ -667,17 +551,12 @@ namespace DershaneOtomasyonu
         private DevExpress.XtraEditors.SimpleButton BtnKaydet;
         private DevExpress.XtraEditors.TextEdit TxtSinav2;
         private DevExpress.XtraEditors.LabelControl LblTC;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit TxtID;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.ComboBoxEdit CmbSinif;
-        private DevExpress.XtraEditors.TextEdit TxtSozlu1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit TxtSozlu2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

@@ -78,6 +78,8 @@ namespace DershaneOtomasyonu
             // 
             this.btnOgretmen.Caption = "ÖĞRETMENLER";
             this.btnOgretmen.Id = 2;
+            this.btnOgretmen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgretmen.ImageOptions.Image")));
+            this.btnOgretmen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOgretmen.ImageOptions.LargeImage")));
             this.btnOgretmen.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOgretmen.ItemAppearance.Normal.Options.UseFont = true;
             this.btnOgretmen.Name = "btnOgretmen";
@@ -86,6 +88,8 @@ namespace DershaneOtomasyonu
             // 
             this.btnOgrenciler.Caption = "ÖĞRENCİLER";
             this.btnOgrenciler.Id = 3;
+            this.btnOgrenciler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgrenciler.ImageOptions.Image")));
+            this.btnOgrenciler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOgrenciler.ImageOptions.LargeImage")));
             this.btnOgrenciler.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOgrenciler.ItemAppearance.Normal.Options.UseFont = true;
             this.btnOgrenciler.Name = "btnOgrenciler";
@@ -94,31 +98,12 @@ namespace DershaneOtomasyonu
             // 
             this.BtnNotGiris.Caption = "NOT GİRİŞ";
             this.BtnNotGiris.Id = 4;
-            this.BtnNotGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.BtnNotGiris.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.BtnNotGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnNotGiris.ImageOptions.Image")));
+            this.BtnNotGiris.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnNotGiris.ImageOptions.LargeImage")));
             this.BtnNotGiris.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnNotGiris.ItemAppearance.Normal.Options.UseFont = true;
             this.BtnNotGiris.Name = "BtnNotGiris";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "DENEME SONUÇLARI";
-            this.barButtonItem7.Id = 5;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // btnAyarlar
-            // 
-            this.btnAyarlar.Caption = "AYARLAR";
-            this.btnAyarlar.Id = 6;
-            this.btnAyarlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.Image")));
-            this.btnAyarlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.LargeImage")));
-            this.btnAyarlar.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAyarlar.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnAyarlar.Name = "btnAyarlar";
+            this.BtnNotGiris.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnNotGiris_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -144,7 +129,6 @@ namespace DershaneOtomasyonu
             this.ribbonPageGroup2.ItemLinks.Add(this.btnOgretmen);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnOgrenciler);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnNotGiris);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
@@ -163,7 +147,7 @@ namespace DershaneOtomasyonu
         }
 
         #endregion
-        private object xtraTabbedMdiManager1;
+        
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnOgretmen;

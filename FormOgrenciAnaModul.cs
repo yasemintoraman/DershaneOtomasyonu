@@ -42,7 +42,7 @@ namespace DershaneOtomasyonu
         }
         void notgetir()
         {
-            MySqlCommand komut2 = new MySqlCommand("SELECT NOTBRANS AS DERSADI, SINAV1, SINAV2, SOZLU1, SOZLU2, SOZLU3, ORTALAMA, DURUM FROM TBL_NOTLAR WHERE NOTTC = @OgrTC", bgl.baglanti());
+            MySqlCommand komut2 = new MySqlCommand("SELECT NOTBRANS AS DERSADI, DOGRUSAYİSİ, YANLİSSAYİSİ, TOPLAMNET FROM TBL_NOTLAR WHERE NOTTC = @OgrTC", bgl.baglanti());
             komut2.Parameters.AddWithValue("@OgrTC", OgrTC);
             MySqlDataAdapter da = new MySqlDataAdapter(komut2);
             DataTable dt = new DataTable();

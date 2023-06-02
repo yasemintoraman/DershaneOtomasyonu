@@ -68,19 +68,35 @@ namespace DershaneOtomasyonu
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            MySqlCommand komut = new MySqlCommand("insert into öğrenci (ogr_no, ogr_sinif, tc, ad, soyad, telefon, dogum_tarihi, kayit_yili) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", mskOgrNo.Text);
-            komut.Parameters.AddWithValue("@p2", cmbSinif.Text);
-            komut.Parameters.AddWithValue("@p3", mskTC.Text);
-            komut.Parameters.AddWithValue("@p4", txtAd.Text);
-            komut.Parameters.AddWithValue("@p5", txtSoyad.Text);
-            komut.Parameters.AddWithValue("@p6", mskTelefon.Text);
-            komut.Parameters.AddWithValue("@p7", dateEdit1.Text);
-            komut.Parameters.AddWithValue("@p8", mskYil.Text);
-            komut.ExecuteNonQuery();
-            bgl.baglanti().Close();
-            MessageBox.Show("Öğrenci Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            listele();
+
+            //ayni tcden var mi diye bakiyoruz
+            MySqlCommand kontrolKomutu = new MySqlCommand("SELECT COUNT(*) FROM öğrenci WHERE tc = @tc",bgl.baglanti());
+
+            kontrolKomutu.Parameters.AddWithValue("@tc", mskTC.Text);
+
+            int kayitSayisi = Convert.ToInt32(kontrolKomutu.ExecuteScalar());
+
+            if (kayitSayisi > 0)
+            {
+                MessageBox.Show("Bu TC numarası zaten kayıtlıdır!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Kaydetmeyi durdur
+            }
+            else
+            {
+                MySqlCommand komut = new MySqlCommand("insert into öğrenci (ogr_no, ogr_sinif, tc, ad, soyad, telefon, dogum_tarihi, kayit_yili) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", bgl.baglanti());
+                komut.Parameters.AddWithValue("@p1", mskOgrNo.Text);
+                komut.Parameters.AddWithValue("@p2", cmbSinif.Text);
+                komut.Parameters.AddWithValue("@p3", mskTC.Text);
+                komut.Parameters.AddWithValue("@p4", txtAd.Text);
+                komut.Parameters.AddWithValue("@p5", txtSoyad.Text);
+                komut.Parameters.AddWithValue("@p6", mskTelefon.Text);
+                komut.Parameters.AddWithValue("@p7", dateEdit1.Text);
+                komut.Parameters.AddWithValue("@p8", mskYil.Text);
+                komut.ExecuteNonQuery();
+                bgl.baglanti().Close();
+                MessageBox.Show("Öğrenci Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
+            }
         }
 
         private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)

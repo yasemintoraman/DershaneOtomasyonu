@@ -236,7 +236,7 @@ namespace DershaneOtomasyonu
             this.layoutControl1.Controls.Add(this.txtBrans);
             this.layoutControl1.Controls.Add(this.lookUpEdit1);
             this.layoutControl1.Controls.Add(this.txtOgrtID);
-            this.layoutControl1.Location = new System.Drawing.Point(46, 87);
+            this.layoutControl1.Location = new System.Drawing.Point(46, 203);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(311, 263);
@@ -461,7 +461,7 @@ namespace DershaneOtomasyonu
             this.layoutControl2.Controls.Add(this.txtOgrSinif);
             this.layoutControl2.Controls.Add(this.lookUpEdit2);
             this.layoutControl2.Controls.Add(this.txtOgrID);
-            this.layoutControl2.Location = new System.Drawing.Point(48, 87);
+            this.layoutControl2.Location = new System.Drawing.Point(50, 201);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
             this.layoutControl2.Size = new System.Drawing.Size(311, 263);
@@ -474,14 +474,15 @@ namespace DershaneOtomasyonu
             this.mskOgrTC.Location = new System.Drawing.Point(159, 84);
             this.mskOgrTC.Mask = "00000000000";
             this.mskOgrTC.Name = "mskOgrTC";
-            this.mskOgrTC.Size = new System.Drawing.Size(140, 65);
+            this.mskOgrTC.Size = new System.Drawing.Size(140, 23);
             this.mskOgrTC.TabIndex = 17;
             // 
             // btnOgrTemizle
             // 
-            this.btnOgrTemizle.Location = new System.Drawing.Point(109, 229);
+            this.btnOgrTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgrTemizle.ImageOptions.Image")));
+            this.btnOgrTemizle.Location = new System.Drawing.Point(109, 215);
             this.btnOgrTemizle.Name = "btnOgrTemizle";
-            this.btnOgrTemizle.Size = new System.Drawing.Size(190, 22);
+            this.btnOgrTemizle.Size = new System.Drawing.Size(190, 36);
             this.btnOgrTemizle.StyleController = this.layoutControl2;
             this.btnOgrTemizle.TabIndex = 16;
             this.btnOgrTemizle.Text = "Temizle";
@@ -489,9 +490,10 @@ namespace DershaneOtomasyonu
             // 
             // btnOgrGuncelle
             // 
-            this.btnOgrGuncelle.Location = new System.Drawing.Point(109, 203);
+            this.btnOgrGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgrGuncelle.ImageOptions.Image")));
+            this.btnOgrGuncelle.Location = new System.Drawing.Point(109, 175);
             this.btnOgrGuncelle.Name = "btnOgrGuncelle";
-            this.btnOgrGuncelle.Size = new System.Drawing.Size(190, 22);
+            this.btnOgrGuncelle.Size = new System.Drawing.Size(190, 36);
             this.btnOgrGuncelle.StyleController = this.layoutControl2;
             this.btnOgrGuncelle.TabIndex = 15;
             this.btnOgrGuncelle.Text = "Güncelle";
@@ -499,9 +501,10 @@ namespace DershaneOtomasyonu
             // 
             // btnOgrKaydet
             // 
-            this.btnOgrKaydet.Location = new System.Drawing.Point(109, 177);
+            this.btnOgrKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgrKaydet.ImageOptions.Image")));
+            this.btnOgrKaydet.Location = new System.Drawing.Point(109, 135);
             this.btnOgrKaydet.Name = "btnOgrKaydet";
-            this.btnOgrKaydet.Size = new System.Drawing.Size(190, 22);
+            this.btnOgrKaydet.Size = new System.Drawing.Size(190, 36);
             this.btnOgrKaydet.StyleController = this.layoutControl2;
             this.btnOgrKaydet.TabIndex = 14;
             this.btnOgrKaydet.Text = "Kaydet";
@@ -509,7 +512,7 @@ namespace DershaneOtomasyonu
             // 
             // txtOgrSifre
             // 
-            this.txtOgrSifre.Location = new System.Drawing.Point(159, 153);
+            this.txtOgrSifre.Location = new System.Drawing.Point(159, 111);
             this.txtOgrSifre.Name = "txtOgrSifre";
             this.txtOgrSifre.Size = new System.Drawing.Size(140, 20);
             this.txtOgrSifre.StyleController = this.layoutControl2;
@@ -517,7 +520,7 @@ namespace DershaneOtomasyonu
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 177);
+            this.labelControl2.Location = new System.Drawing.Point(12, 135);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(93, 13);
             this.labelControl2.StyleController = this.layoutControl2;
@@ -601,16 +604,16 @@ namespace DershaneOtomasyonu
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.labelControl2;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 165);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 123);
             this.layoutControlItem14.Name = "layoutControlItem6";
-            this.layoutControlItem14.Size = new System.Drawing.Size(97, 78);
+            this.layoutControlItem14.Size = new System.Drawing.Size(97, 120);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.txtOgrSifre;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 141);
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 99);
             this.layoutControlItem15.Name = "layoutControlItem4";
             this.layoutControlItem15.Size = new System.Drawing.Size(291, 24);
             this.layoutControlItem15.Text = "Şifre:";
@@ -619,27 +622,27 @@ namespace DershaneOtomasyonu
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.btnOgrKaydet;
-            this.layoutControlItem16.Location = new System.Drawing.Point(97, 165);
+            this.layoutControlItem16.Location = new System.Drawing.Point(97, 123);
             this.layoutControlItem16.Name = "layoutControlItem7";
-            this.layoutControlItem16.Size = new System.Drawing.Size(194, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(194, 40);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.btnOgrGuncelle;
-            this.layoutControlItem17.Location = new System.Drawing.Point(97, 191);
+            this.layoutControlItem17.Location = new System.Drawing.Point(97, 163);
             this.layoutControlItem17.Name = "layoutControlItem8";
-            this.layoutControlItem17.Size = new System.Drawing.Size(194, 26);
+            this.layoutControlItem17.Size = new System.Drawing.Size(194, 40);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
             // layoutControlItem18
             // 
             this.layoutControlItem18.Control = this.btnOgrTemizle;
-            this.layoutControlItem18.Location = new System.Drawing.Point(97, 217);
+            this.layoutControlItem18.Location = new System.Drawing.Point(97, 203);
             this.layoutControlItem18.Name = "layoutControlItem9";
-            this.layoutControlItem18.Size = new System.Drawing.Size(194, 26);
+            this.layoutControlItem18.Size = new System.Drawing.Size(194, 40);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
@@ -648,7 +651,7 @@ namespace DershaneOtomasyonu
             this.layoutControlItem13.Control = this.mskOgrTC;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(291, 69);
+            this.layoutControlItem13.Size = new System.Drawing.Size(291, 27);
             this.layoutControlItem13.Text = "T.C:";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(135, 13);
             // 

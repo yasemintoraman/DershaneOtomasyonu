@@ -76,11 +76,14 @@ namespace DershaneOtomasyonu
             this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem1.Name = "barButtonItem1";
+//            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnOgretmen
             // 
             this.btnOgretmen.Caption = "ÖĞRETMENLER";
             this.btnOgretmen.Id = 2;
+            this.btnOgretmen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgretmen.ImageOptions.Image")));
+            this.btnOgretmen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOgretmen.ImageOptions.LargeImage")));
             this.btnOgretmen.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOgretmen.ItemAppearance.Normal.Options.UseFont = true;
             this.btnOgretmen.Name = "btnOgretmen";
@@ -90,6 +93,8 @@ namespace DershaneOtomasyonu
             // 
             this.btnOgrenciler.Caption = "ÖĞRENCİLER";
             this.btnOgrenciler.Id = 3;
+            this.btnOgrenciler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOgrenciler.ImageOptions.Image")));
+            this.btnOgrenciler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOgrenciler.ImageOptions.LargeImage")));
             this.btnOgrenciler.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOgrenciler.ItemAppearance.Normal.Options.UseFont = true;
             this.btnOgrenciler.Name = "btnOgrenciler";
@@ -151,7 +156,6 @@ namespace DershaneOtomasyonu
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgretmen);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnOgrenciler);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnNotGiris);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAyarlar);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -169,7 +173,7 @@ namespace DershaneOtomasyonu
             this.IsMdiContainer = true;
             this.Name = "FormAnaModul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ELİF\'İN DERSHANESİ";
+            this.Text = "SEVGİ DERSHANESİ";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);

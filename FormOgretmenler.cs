@@ -33,7 +33,7 @@ namespace DershaneOtomasyonu
             MySqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
-                cmbBrans.Properties.Items.Add(dr[1]);
+                cmbBrans.Properties.Items.Add(dr[1]); //bransi getirir
             }
             bgl.baglanti().Close();
 
@@ -59,19 +59,32 @@ namespace DershaneOtomasyonu
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            //MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ogr_id,ad, soyad, dogum_tarihi,brans) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
-            MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ad, soyad, dogum_tarihi,brans,ogrt_tc) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
-            //komut.Parameters.AddWithValue("@p1", txtID.Text);
-            komut.Parameters.AddWithValue("@p1", txtAd.Text);
-            komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
-            komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
-            komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
-            komut.Parameters.AddWithValue("@p5", mskOgrtTC.Text);
+            //ayni tcden var mi diye bakiyoruz
+            MySqlCommand kontrolKomutu = new MySqlCommand("SELECT COUNT(*) FROM tbl_ogretmenler WHERE ogrt_tc = @tc", bgl.baglanti());
 
-            komut.ExecuteNonQuery();
-            bgl.baglanti().Close(); //baglantiyi kapattik
-            MessageBox.Show("Personel Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            listele();
+            kontrolKomutu.Parameters.AddWithValue("@tc", mskOgrtTC.Text);
+
+            int kayitSayisi = Convert.ToInt32(kontrolKomutu.ExecuteScalar());
+
+            if (kayitSayisi > 0)
+            {
+                MessageBox.Show("Bu TC numarası zaten kayıtlıdır!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Kaydetmeyi durdur
+            }
+            else
+            {
+                MySqlCommand komut = new MySqlCommand("insert into TBL_OGRETMENLER (ad, soyad, dogum_tarihi,brans,ogrt_tc) values(@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
+                komut.Parameters.AddWithValue("@p1", txtAd.Text);
+                komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
+                komut.Parameters.AddWithValue("@p3", dateEdit1.Text);
+                komut.Parameters.AddWithValue("@p4", cmbBrans.Text);
+                komut.Parameters.AddWithValue("@p5", mskOgrtTC.Text);
+
+                komut.ExecuteNonQuery();
+                bgl.baglanti().Close(); //baglantiyi kapattik
+                MessageBox.Show("Personel Eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listele();
+            }
         }
 
         //gridView bilgilerini yandaki tabloda(toolda) goruntulemek

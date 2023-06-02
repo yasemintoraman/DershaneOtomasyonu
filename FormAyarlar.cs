@@ -20,7 +20,7 @@ namespace DershaneOtomasyonu
 
         mysqlbaglantisi bgl = new mysqlbaglantisi();
 
-        //ADO.NET ile öğretmen sifre bilgileri
+        // öğretmen sifre bilgileri
         void listele()
         {
             DataTable dt1 = new DataTable();
@@ -55,7 +55,7 @@ namespace DershaneOtomasyonu
         }
 
 
-        //ADO.NET ile LookUpEdit Araci Veri Getirme
+        //LookUpEdit Araci Veri Getirme
 
         void ogretmenlistesi()
         {
@@ -107,7 +107,7 @@ namespace DershaneOtomasyonu
             }
         }
 
-        //ADO.NET ile LookUpEdit secimi sonrasi verilerin getirilmesi
+        //LookUpEdit secimi sonrasi verilerin getirilmesi
         private void lookUpEdit1_Properties_EditValueChanged(object sender, EventArgs e)
         {
             txtOgrtSifre.Text = "";
@@ -152,7 +152,7 @@ namespace DershaneOtomasyonu
             temizle();
         }
 
-        //ADO.NET ögretmen sifre guncelle
+        //ögretmen sifre guncelle
         private void BtnOgrtGuncelle_Click(object sender, EventArgs e)
         {
             MySqlCommand komut3 = new MySqlCommand("Update tbl_ayarlar set OGRT_SIFRE=@p1 where AYARLAROGRID=@p2", bgl.baglanti());

@@ -58,11 +58,11 @@ namespace DershaneOtomasyonu
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DarkRed;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(102, 18);
+            this.labelControl1.Location = new System.Drawing.Point(207, 15);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(622, 53);
+            this.labelControl1.Size = new System.Drawing.Size(363, 53);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "ELİF\'İN DERSHANESİ GİRİŞ PANELİ";
+            this.labelControl1.Text = "SEVGİ DERSHANESİ ";
             // 
             // txtSifre
             // 
